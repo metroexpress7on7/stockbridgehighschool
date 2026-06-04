@@ -28,12 +28,22 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .ncta{background:var(--o);color:#fff;border:none;padding:9px 20px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.15s;}
 .ncta:hover{background:var(--ol);}
 
+/* NAV LOGO IMAGE */
+.nlogo-img{width:34px;height:34px;object-fit:contain;flex-shrink:0;}
+
 section{display:none;}
 section.on{display:block;}
 
 /* HOME */
 .home-hero{min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 3rem 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--bd);}
-.home-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,88,10,0.06) 0%,transparent 50%),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px);pointer-events:none;}
+
+/* Banner image layer */
+.home-hero-banner{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=1600&q=80');background-size:cover;background-position:center top;opacity:0.18;pointer-events:none;}
+
+.home-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,88,10,0.10) 0%,transparent 50%),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px);pointer-events:none;}
+/* Dark gradient over banner so text stays readable */
+.home-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.55) 60%, rgba(10,10,11,0.3) 100%);pointer-events:none;}
+
 .home-hero-bg::after{content:'TIGERS';position:absolute;right:-20px;bottom:-80px;font-family:'Bebas Neue',sans-serif;font-size:340px;color:rgba(255,255,255,0.016);letter-spacing:10px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
 .home-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--o);font-weight:500;margin-bottom:1.75rem;display:flex;align-items:center;gap:10px;position:relative;}
 .home-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--o);}
@@ -46,12 +56,19 @@ section.on{display:block;}
 .btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--bd2);padding:12px 28px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;}
 .btn-ghost:hover{border-color:rgba(255,255,255,0.4);color:#fff;}
 
-
 /* PAGE HEAD */
 .page-head{padding:2.75rem 3rem;border-bottom:1px solid var(--bd);display:flex;align-items:flex-end;justify-content:space-between;}
 .page-head h2{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;letter-spacing:3px;line-height:1;}
 .page-head p{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);letter-spacing:2px;margin-top:6px;text-transform:uppercase;}
 .page-head-right{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);text-align:right;letter-spacing:1.5px;line-height:1.8;text-transform:uppercase;}
+
+/* SEARCH FIELD */
+.search-wrap{display:flex;align-items:center;position:relative;}
+.search-input{background:var(--s2);border:1px solid var(--bd2);border-radius:999px;padding:9px 20px 9px 40px;color:var(--txt);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;outline:none;width:260px;transition:border-color 0.15s,background 0.15s;}
+.search-input::placeholder{color:var(--mu);}
+.search-input:focus{border-color:rgba(255,255,255,0.35);background:var(--s3);}
+.search-icon{position:absolute;left:14px;color:var(--mu);pointer-events:none;display:flex;align-items:center;}
+.search-icon svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;}
 
 /* ROSTER */
 .filter-strip{display:flex;align-items:center;border-bottom:1px solid var(--bd);padding:0 3rem;overflow-x:auto;}
@@ -157,7 +174,11 @@ section.on{display:block;}
 
 <nav>
   <div class="nlogo" onclick="go('home')">
-    <div class="nlogo-mark">S</div>
+    <!-- 
+      LOGO: Replace the src below with your actual logo file path, e.g. src="logo.png"
+      The logo should be placed in the same folder as this index.html file.
+    -->
+    <img class="nlogo-img" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Stockbridge_Tigers_logo.png/200px-Stockbridge_Tigers_logo.png" alt="Stockbridge Tigers Logo" onerror="this.style.display='none'">
     <div class="nlogo-wordmark">
       <span class="nlogo-top">Stockbridge Tigers</span>
       <span class="nlogo-bot">Football · GHSA 5A</span>
@@ -175,7 +196,14 @@ section.on{display:block;}
 <!-- HOME -->
 <section id="home" class="on">
   <div class="home-hero">
+    <!-- 
+      BANNER IMAGE: Replace the URL in .home-hero-banner's background-image (in the CSS above)
+      with your own photo. Save the image in the same folder and use: url('your-photo.jpg')
+      Recommended: a wide action shot of your team. Opacity is set low (0.18) so text stays readable.
+    -->
+    <div class="home-hero-banner"></div>
     <div class="home-hero-bg"></div>
+    <div class="home-hero-overlay"></div>
     <div class="home-eyebrow">Stockbridge, Georgia · Henry County · GHSA 5A</div>
     <h1>Tigers<br><em>Football</em></h1>
     <p class="home-hero-sub">Developing elite athletes for the next level. Stockbridge High School competes in GHSA 5A out of Henry County, Georgia. Film available on Hudl — college staff inquiries answered within 24 hours.</p>
@@ -184,7 +212,7 @@ section.on{display:block;}
       <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Coach Inquiry</button>
     </div>
   </div>
-  </section>
+</section>
 
 <!-- ROSTER -->
 <section id="roster">
@@ -193,7 +221,12 @@ section.on{display:block;}
       <h2>2025 Roster</h2>
       <p>Stockbridge High School · Henry County, Georgia · GHSA 5A</p>
     </div>
-    <div class="page-head-right">Click any player<br>to view full profile</div>
+    <div class="search-wrap">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </span>
+      <input class="search-input" type="text" id="playerSearch" placeholder="Search players…" oninput="searchPlayers(this.value)">
+    </div>
   </div>
   <div class="filter-strip">
     <button class="filt sel" onclick="filter('all',this)">All Players</button>
@@ -322,7 +355,6 @@ section.on{display:block;}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
-// All player data stored in JS — no quote-in-attribute issues
 var players = [
   {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83", school:"Stockbridge HS", side:"off", offers:["Georgia Tech","South Carolina","Kentucky"],      strengths:"Speed, route running, sharp hands"},
   {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive"},
@@ -334,7 +366,8 @@ var players = [
   {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism"}
 ];
 
-// Build roster cards from data
+var currentFilter = 'all';
+
 function buildRoster() {
   var grid = document.getElementById('rosterGrid');
   grid.innerHTML = '';
@@ -349,6 +382,8 @@ function buildRoster() {
     card.dataset.cls = p.cls;
     card.dataset.side = p.side;
     card.dataset.idx = i;
+    card.dataset.name = p.name.toLowerCase();
+    card.dataset.pos = p.pos.toLowerCase();
     card.innerHTML =
       '<div class="r-photo"><div class="r-photo-letter">'+initials+'</div><div class="r-pos-bar"><span class="r-pos-txt">'+posAbbr+'</span><span class="r-jersey">'+p.num+'</span></div></div>'+
       '<div class="r-info"><div class="r-name">'+p.name+'</div><div class="r-detail">Class of '+p.cls+' · '+p.ht+' · '+p.wt+'</div>'+badgeHtml+'</div>';
@@ -356,6 +391,18 @@ function buildRoster() {
       openProfile(parseInt(this.dataset.idx));
     });
     grid.appendChild(card);
+  });
+}
+
+function searchPlayers(query) {
+  var q = query.toLowerCase().trim();
+  document.querySelectorAll('.r-card').forEach(function(card) {
+    var matchesSearch = !q || card.dataset.name.includes(q) || card.dataset.pos.includes(q);
+    var matchesFilter = currentFilter === 'all'
+      || (currentFilter === 'off' && card.dataset.side === 'off')
+      || (currentFilter === 'def' && card.dataset.side === 'def')
+      || card.dataset.cls === currentFilter;
+    card.classList.toggle('hidden', !(matchesSearch && matchesFilter));
   });
 }
 
@@ -400,15 +447,11 @@ function go(id, el) {
 }
 
 function filter(type, btn) {
+  currentFilter = type;
   document.querySelectorAll('.filt').forEach(function(b){b.classList.remove('sel');});
   btn.classList.add('sel');
-  document.querySelectorAll('.r-card').forEach(function(card){
-    var show = type === 'all'
-      || (type === 'off' && card.dataset.side === 'off')
-      || (type === 'def' && card.dataset.side === 'def')
-      || card.dataset.cls === type;
-    card.classList.toggle('hidden', !show);
-  });
+  var searchVal = document.getElementById('playerSearch').value;
+  searchPlayers(searchVal);
 }
 
 buildRoster();
