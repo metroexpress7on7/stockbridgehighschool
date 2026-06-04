@@ -1,0 +1,432 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blk:#0a0a0b;--s1:#111114;--s2:#18181c;--s3:#202025;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.16);
+  --o:#E8580A;--ol:#f06520;
+  --txt:#e8e8ea;--mu:#6b6b72;--mu2:#4a4a52;--white:#ffffff;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--blk);color:var(--txt);font-family:'DM Sans',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;background:rgba(10,10,11,0.97);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.nlogo{display:flex;align-items:center;gap:13px;cursor:pointer;text-decoration:none;}
+.nlogo-mark{width:30px;height:30px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;}
+.nlogo-top{font-family:'Bebas Neue',sans-serif;font-size:17px;color:#fff;letter-spacing:2.5px;display:block;line-height:1;}
+.nlogo-bot{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--mu);letter-spacing:2.5px;text-transform:uppercase;display:block;margin-top:3px;}
+.nlinks{display:flex;}
+.nlinks a{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;color:var(--mu);cursor:pointer;text-decoration:none;letter-spacing:2px;text-transform:uppercase;padding:0 1.1rem;height:60px;display:flex;align-items:center;border-bottom:1px solid transparent;transition:color 0.15s,border-color 0.15s;}
+.nlinks a.on,.nlinks a:hover{color:var(--white);border-bottom-color:var(--o);}
+.ncta{background:var(--o);color:#fff;border:none;padding:9px 20px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.15s;}
+.ncta:hover{background:var(--ol);}
+
+section{display:none;}
+section.on{display:block;}
+
+/* HOME */
+.home-hero{min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 3rem 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--bd);}
+.home-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,88,10,0.06) 0%,transparent 50%),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px);pointer-events:none;}
+.home-hero-bg::after{content:'TIGERS';position:absolute;right:-20px;bottom:-80px;font-family:'Bebas Neue',sans-serif;font-size:340px;color:rgba(255,255,255,0.016);letter-spacing:10px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
+.home-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--o);font-weight:500;margin-bottom:1.75rem;display:flex;align-items:center;gap:10px;position:relative;}
+.home-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--o);}
+.home-hero h1{font-family:'Bebas Neue',sans-serif;font-size:130px;line-height:0.88;color:#fff;letter-spacing:4px;position:relative;}
+.home-hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--o);}
+.home-hero-sub{font-size:14px;color:var(--mu);line-height:1.85;margin-top:2rem;max-width:520px;font-weight:300;position:relative;}
+.home-hero-actions{display:flex;gap:10px;margin-top:2.25rem;position:relative;}
+.btn-fill{background:var(--o);color:#fff;border:none;padding:12px 28px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.15s;}
+.btn-fill:hover{background:var(--ol);}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--bd2);padding:12px 28px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.4);color:#fff;}
+
+/* HOME FOOTER */
+.home-foot{display:flex;align-items:center;justify-content:space-between;padding:2.5rem 3rem;border-top:1px solid var(--bd);}
+.hf-left{display:flex;flex-direction:column;gap:4px;}
+.hf-school{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:2.5px;}
+.hf-sub{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);letter-spacing:2.5px;text-transform:uppercase;}
+.hf-links{display:flex;gap:12px;align-items:center;}
+.hf-link{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mu);border:1px solid var(--bd);padding:9px 16px;transition:color 0.15s,border-color 0.15s;}
+.hf-link:hover{color:#fff;border-color:var(--bd2);}
+.hf-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;}
+
+/* PAGE HEAD */
+.page-head{padding:2.75rem 3rem;border-bottom:1px solid var(--bd);display:flex;align-items:flex-end;justify-content:space-between;}
+.page-head h2{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;letter-spacing:3px;line-height:1;}
+.page-head p{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);letter-spacing:2px;margin-top:6px;text-transform:uppercase;}
+.page-head-right{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);text-align:right;letter-spacing:1.5px;line-height:1.8;text-transform:uppercase;}
+
+/* ROSTER */
+.filter-strip{display:flex;align-items:center;border-bottom:1px solid var(--bd);padding:0 3rem;overflow-x:auto;}
+.filt{padding:0 16px;height:44px;font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:transparent;border:none;color:var(--mu);cursor:pointer;border-bottom:1px solid transparent;transition:all 0.15s;white-space:nowrap;}
+.filt:hover{color:var(--txt);}
+.filt.sel{color:#fff;border-bottom-color:var(--o);}
+
+.roster-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.r-card{background:var(--blk);cursor:pointer;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);transition:background 0.2s;}
+.r-card:hover{background:var(--s1);}
+.r-card.hidden{display:none;}
+.r-card:nth-child(4n){border-right:none;}
+.r-photo{aspect-ratio:3/4;background:var(--s2);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.r-photo-letter{font-family:'Bebas Neue',sans-serif;font-size:90px;color:rgba(255,255,255,0.03);line-height:1;letter-spacing:3px;}
+.r-pos-bar{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,0.88));display:flex;justify-content:space-between;align-items:center;}
+.r-pos-txt{font-family:'Bebas Neue',sans-serif;font-size:13px;color:#fff;letter-spacing:2.5px;}
+.r-jersey{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);letter-spacing:1.5px;font-weight:500;}
+.r-info{padding:14px 16px 18px;}
+.r-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:1.5px;line-height:1;}
+.r-detail{font-size:11px;color:var(--mu);margin-top:4px;font-weight:300;}
+.r-badge{display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:8.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border:1px solid;}
+.rb-offer{border-color:rgba(232,88,10,0.35);color:var(--ol);}
+.rb-pros{border-color:rgba(255,255,255,0.08);color:var(--mu);}
+
+/* PLAYER PROFILE */
+.profile-back{padding:1rem 3rem;border-bottom:1px solid var(--bd);}
+.profile-back button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--mu);display:flex;align-items:center;gap:8px;transition:color 0.15s;padding:0;}
+.profile-back button::before{content:'←';font-size:14px;}
+.profile-back button:hover{color:var(--txt);}
+
+.profile-hero{display:grid;grid-template-columns:1fr 1fr;min-height:300px;border-bottom:1px solid var(--bd);}
+.profile-hero-left{padding:3.5rem 3rem;border-right:1px solid var(--bd);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.profile-hero-left::before{content:'';position:absolute;top:-80px;left:-60px;width:350px;height:350px;background:radial-gradient(circle,rgba(232,88,10,0.07) 0%,transparent 70%);pointer-events:none;}
+.profile-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:500;margin-bottom:0.75rem;position:relative;}
+.profile-name{font-family:'Bebas Neue',sans-serif;font-size:72px;color:#fff;line-height:0.92;letter-spacing:3px;position:relative;}
+.profile-school{font-size:13px;color:var(--mu);margin-top:0.75rem;font-weight:300;position:relative;}
+.profile-hero-right{display:grid;grid-template-columns:1fr 1fr;}
+.pstat{padding:2.25rem 2rem;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);display:flex;flex-direction:column;justify-content:flex-end;}
+.pstat:nth-child(even){border-right:none;}
+.pstat:nth-child(3),.pstat:nth-child(4){border-bottom:none;}
+.pstat-l{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:8px;}
+.pstat-v{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#fff;line-height:1;letter-spacing:1.5px;}
+.pstat-v.sm{font-size:22px;padding-top:6px;}
+
+.profile-body{display:grid;grid-template-columns:2fr 1fr;border-bottom:1px solid var(--bd);}
+.profile-main{padding:3rem;border-right:1px solid var(--bd);}
+.profile-side{padding:3rem;}
+.profile-section{margin-bottom:2.5rem;}
+.profile-section:last-child{margin-bottom:0;}
+.profile-section-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;}
+.profile-section-label::after{content:'';flex:1;height:1px;background:var(--bd);}
+.offers-wrap{display:flex;flex-wrap:wrap;gap:8px;}
+.offer-pill{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;padding:6px 14px;border:1px solid var(--bd2);color:var(--txt);letter-spacing:0.5px;}
+.profile-strengths{font-size:14px;color:var(--mu);line-height:1.85;font-weight:300;}
+.measurables-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);}
+.meas-cell{background:var(--s1);padding:1rem 1.25rem;}
+.meas-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
+.meas-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
+.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:0;}
+
+/* COACHES */
+.coaches-wrap{padding:3rem;}
+.coaches-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.c-card{background:var(--s1);border:1px solid var(--bd2);padding:2.25rem;display:flex;gap:1.5rem;align-items:flex-start;transition:border-color 0.2s,background 0.2s;}
+.c-card:hover{background:var(--s2);border-color:rgba(255,255,255,0.24);}
+.c-av{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;color:#fff;letter-spacing:1.5px;}
+.c-av.o{background:var(--o);}
+.c-av.g{background:var(--s3);border:1px solid var(--bd2);}
+.c-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:1.5px;line-height:1;}
+.c-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--o);font-weight:500;margin:5px 0 12px;}
+.c-contact{font-size:11px;color:var(--mu);display:flex;align-items:center;gap:6px;margin-top:4px;font-weight:300;}
+
+/* CONTACT */
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--bd);}
+.contact-left{padding:3rem;border-right:1px solid var(--bd);}
+.contact-left h3{font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff;letter-spacing:2px;margin-bottom:1rem;line-height:1.1;}
+.contact-left p{font-size:13px;color:var(--mu);line-height:1.8;margin-bottom:2rem;font-weight:300;}
+.contact-detail{margin-bottom:1.25rem;}
+.cd-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:3px;}
+.cd-val{font-size:13px;color:var(--txt);}
+.contact-right{padding:3rem;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:7px;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--s2);border:none;border-bottom:1px solid var(--bd2);padding:10px 14px;color:var(--txt);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;transition:border-color 0.15s;outline:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-bottom-color:var(--o);background:var(--s3);}
+.fg textarea{min-height:90px;resize:vertical;}
+.fg-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.submit-btn{width:100%;background:var(--o);color:#fff;border:none;padding:13px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:background 0.15s;margin-top:6px;}
+.submit-btn:hover{background:var(--ol);}
+
+/* FOOTER */
+.foot{padding:2.5rem 3rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;}
+.foot-left{display:flex;flex-direction:column;gap:5px;}
+.foot-school{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:2.5px;}
+.foot-sub{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);letter-spacing:2.5px;text-transform:uppercase;}
+.foot-links{display:flex;gap:10px;}
+.foot-link{display:flex;align-items:center;gap:7px;text-decoration:none;font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mu);border:1px solid var(--bd);padding:9px 16px;transition:color 0.15s,border-color 0.15s;}
+.foot-link:hover{color:#fff;border-color:var(--bd2);}
+.foot-link svg{width:13px;height:13px;fill:currentColor;flex-shrink:0;}
+</style>
+
+<nav>
+  <div class="nlogo" onclick="go('home')">
+    <div class="nlogo-mark">S</div>
+    <div class="nlogo-wordmark">
+      <span class="nlogo-top">Stockbridge Tigers</span>
+      <span class="nlogo-bot">Football · GHSA 6A</span>
+    </div>
+  </div>
+  <div class="nlinks">
+    <a class="on" onclick="go('home',this)">Home</a>
+    <a onclick="go('roster',this)">Roster</a>
+    <a onclick="go('coaches',this)">Staff</a>
+    <a onclick="go('contact',this)">Recruiting</a>
+  </div>
+  <button class="ncta" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Coach Inquiry</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="on">
+  <div class="home-hero">
+    <div class="home-hero-bg"></div>
+    <div class="home-eyebrow">Stockbridge, Georgia · Henry County · GHSA 6A</div>
+    <h1>Tigers<br><em>Football</em></h1>
+    <p class="home-hero-sub">Developing elite athletes for the next level. Stockbridge High School competes in GHSA 6A out of Henry County, Georgia. Film available on Hudl — college staff inquiries answered within 24 hours.</p>
+    <div class="home-hero-actions">
+      <button class="btn-fill" onclick="go('roster',document.querySelectorAll('.nlinks a')[1])">View Prospects</button>
+      <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Coach Inquiry</button>
+    </div>
+  </div>
+  <div class="home-foot">
+    <div class="hf-left">
+      <div class="hf-school">Stockbridge Tigers Football</div>
+      <div class="hf-sub">Stockbridge, Georgia · GHSA 6A · Henry County</div>
+    </div>
+    <div class="hf-links">
+      <a class="hf-link" href="https://twitter.com/SHSTigersFB" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @SHSTigersFB
+      </a>
+      <a class="hf-link" href="https://instagram.com/shstigersfb" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @shstigersfb
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ROSTER -->
+<section id="roster">
+  <div class="page-head">
+    <div>
+      <h2>2025 Roster</h2>
+      <p>Stockbridge High School · Henry County, Georgia · GHSA 6A</p>
+    </div>
+    <div class="page-head-right">Click any player<br>to view full profile</div>
+  </div>
+  <div class="filter-strip">
+    <button class="filt sel" onclick="filter('all',this)">All Players</button>
+    <button class="filt" onclick="filter('off',this)">Offense</button>
+    <button class="filt" onclick="filter('def',this)">Defense</button>
+    <button class="filt" onclick="filter('2026',this)">Class of 2026</button>
+    <button class="filt" onclick="filter('2027',this)">Class of 2027</button>
+    <button class="filt" onclick="filter('2028',this)">Class of 2028</button>
+  </div>
+  <div class="roster-grid" id="rosterGrid"></div>
+</section>
+
+<!-- PLAYER PROFILE -->
+<section id="profile">
+  <div class="profile-back">
+    <button onclick="go('roster',document.querySelectorAll('.nlinks a')[1])">Back to Roster</button>
+  </div>
+  <div class="profile-hero">
+    <div class="profile-hero-left">
+      <div class="profile-tag" id="pTag"></div>
+      <div class="profile-name" id="pName"></div>
+      <div class="profile-school" id="pSchool"></div>
+    </div>
+    <div class="profile-hero-right">
+      <div class="pstat"><div class="pstat-l">Class</div><div class="pstat-v" id="pCls"></div></div>
+      <div class="pstat"><div class="pstat-l">Jersey</div><div class="pstat-v" id="pJersey"></div></div>
+      <div class="pstat"><div class="pstat-l">Height</div><div class="pstat-v sm" id="pHeight"></div></div>
+      <div class="pstat"><div class="pstat-l">Weight</div><div class="pstat-v sm" id="pWeight"></div></div>
+    </div>
+  </div>
+  <div class="profile-body">
+    <div class="profile-main">
+      <div class="profile-section" id="pOffersSection">
+        <div class="profile-section-label">College Offers</div>
+        <div class="offers-wrap" id="pOffers"></div>
+      </div>
+      <div class="profile-section">
+        <div class="profile-section-label">Strengths &amp; Attributes</div>
+        <div class="profile-strengths" id="pStrengths"></div>
+      </div>
+      <div class="profile-section">
+        <div class="profile-section-label">Film</div>
+        <div class="profile-strengths">Game and highlight film available on Hudl upon request. Contact staff using the buttons below.</div>
+      </div>
+    </div>
+    <div class="profile-side">
+      <div class="profile-section">
+        <div class="profile-section-label">Measurables</div>
+        <div class="measurables-grid">
+          <div class="meas-cell"><div class="meas-label">Height</div><div class="meas-val" id="pMHeight"></div></div>
+          <div class="meas-cell"><div class="meas-label">Weight</div><div class="meas-val" id="pMWeight"></div></div>
+          <div class="meas-cell"><div class="meas-label">Class</div><div class="meas-val" id="pMCls"></div></div>
+          <div class="meas-cell"><div class="meas-label">Position</div><div class="meas-val" id="pMPos"></div></div>
+        </div>
+      </div>
+      <div class="profile-section" style="margin-top:2rem;">
+        <div class="profile-section-label">Contact</div>
+        <div class="profile-actions">
+          <button class="btn-fill" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Request Film</button>
+          <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Inquire</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section id="coaches">
+  <div class="page-head">
+    <div><h2>Coaching Staff</h2><p>All college staff inquiries answered within 24 hours.</p></div>
+  </div>
+  <div class="coaches-wrap">
+    <div class="coaches-grid">
+      <div class="c-card"><div class="c-av o">HC</div><div><div class="c-name">Head Coach</div><div class="c-role">Head Football Coach</div><div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> headcoach@stockbridgehs.edu</div><div class="c-contact"><i class="ti ti-brand-twitter" style="font-size:13px"></i> @SHSTigersFB</div></div></div>
+      <div class="c-card"><div class="c-av g">OC</div><div><div class="c-name">Offensive Coordinator</div><div class="c-role">Offensive Coordinator</div><div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> oc@stockbridgehs.edu</div></div></div>
+      <div class="c-card"><div class="c-av g">DC</div><div><div class="c-name">Defensive Coordinator</div><div class="c-role">Defensive Coordinator</div><div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> dc@stockbridgehs.edu</div></div></div>
+      <div class="c-card"><div class="c-av o">RC</div><div><div class="c-name">Recruiting Coordinator</div><div class="c-role">Recruiting Coordinator</div><div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> recruiting@stockbridgehs.edu</div><div class="c-contact"><i class="ti ti-brand-twitter" style="font-size:13px"></i> @SHSRecruiting</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="page-head"><div><h2>Coach Inquiry</h2><p>Express interest or request film on a Stockbridge athlete.</p></div></div>
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h3>Connect with<br>Our Staff</h3>
+      <p>We make it simple for college programs to connect with Stockbridge athletes. Fill out the form and our staff will respond within 24 hours.</p>
+      <div class="contact-detail"><div class="cd-label">Email</div><div class="cd-val">recruiting@stockbridgehs.edu</div></div>
+      <div class="contact-detail"><div class="cd-label">Twitter / X</div><div class="cd-val">@SHSRecruiting</div></div>
+      <div class="contact-detail"><div class="cd-label">Location</div><div class="cd-val">Stockbridge, Georgia · Henry County</div></div>
+    </div>
+    <div class="contact-right">
+      <div class="fg-2">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Coach"></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+      </div>
+      <div class="fg-2">
+        <div class="fg"><label>Program</label><input type="text" placeholder="University of Georgia"></div>
+        <div class="fg"><label>Role</label><select><option>Recruiting Coordinator</option><option>Position Coach</option><option>Head Coach</option><option>GA / Analyst</option><option>Other</option></select></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="coach@school.edu"></div>
+      <div class="fg"><label>Athlete(s) of Interest</label><input type="text" id="contactAthleteField" placeholder="e.g. Mason Freeman, WR '27"></div>
+      <div class="fg"><label>Message</label><textarea placeholder="Position needs, timeline, visit request, etc."></textarea></div>
+      <button class="submit-btn">Submit Inquiry</button>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <div class="foot-left">
+    <div class="foot-school">Stockbridge Tigers Football</div>
+    <div class="foot-sub">Stockbridge, Georgia · GHSA 6A · Henry County</div>
+  </div>
+  <div class="foot-links">
+    <a class="foot-link" href="https://twitter.com/SHSTigersFB" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      @SHSTigersFB
+    </a>
+    <a class="foot-link" href="https://instagram.com/shstigersfb" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @shstigersfb
+    </a>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script>
+// All player data stored in JS — no quote-in-attribute issues
+var players = [
+  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83", school:"Stockbridge HS", side:"off", offers:["Georgia Tech","South Carolina","Kentucky"],      strengths:"Speed, route running, sharp hands"},
+  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive"},
+  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length"},
+  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility"},
+  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection"},
+  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling"},
+  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership"},
+  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism"}
+];
+
+// Build roster cards from data
+function buildRoster() {
+  var grid = document.getElementById('rosterGrid');
+  grid.innerHTML = '';
+  players.forEach(function(p, i) {
+    var initials = p.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
+    var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+    var badgeHtml = p.offers.length
+      ? '<span class="r-badge rb-offer">'+p.offers.length+' Offer'+(p.offers.length>1?'s':'')+'</span>'
+      : '<span class="r-badge rb-pros">Prospect</span>';
+    var card = document.createElement('div');
+    card.className = 'r-card';
+    card.dataset.cls = p.cls;
+    card.dataset.side = p.side;
+    card.dataset.idx = i;
+    card.innerHTML =
+      '<div class="r-photo"><div class="r-photo-letter">'+initials+'</div><div class="r-pos-bar"><span class="r-pos-txt">'+posAbbr+'</span><span class="r-jersey">'+p.num+'</span></div></div>'+
+      '<div class="r-info"><div class="r-name">'+p.name+'</div><div class="r-detail">Class of '+p.cls+' · '+p.ht+' · '+p.wt+'</div>'+badgeHtml+'</div>';
+    card.addEventListener('click', function(){
+      openProfile(parseInt(this.dataset.idx));
+    });
+    grid.appendChild(card);
+  });
+}
+
+function openProfile(idx) {
+  var p = players[idx];
+  document.getElementById('pTag').textContent = p.pos + ' · Class of ' + p.cls;
+  document.getElementById('pName').textContent = p.name;
+  document.getElementById('pSchool').textContent = p.school + ' · ' + p.num;
+  document.getElementById('pCls').textContent = p.cls;
+  document.getElementById('pJersey').textContent = p.num;
+  document.getElementById('pHeight').textContent = p.ht;
+  document.getElementById('pWeight').textContent = p.wt;
+  document.getElementById('pMHeight').textContent = p.ht;
+  document.getElementById('pMWeight').textContent = p.wt.replace(' lbs','');
+  document.getElementById('pMCls').textContent = p.cls;
+  var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,3).toUpperCase();
+  document.getElementById('pMPos').textContent = posAbbr;
+  document.getElementById('pStrengths').textContent = p.strengths;
+  var wrap = document.getElementById('pOffers');
+  wrap.innerHTML = '';
+  var sec = document.getElementById('pOffersSection');
+  if (p.offers.length) {
+    sec.style.display = 'block';
+    p.offers.forEach(function(o){
+      var pill = document.createElement('span');
+      pill.className = 'offer-pill';
+      pill.textContent = o;
+      wrap.appendChild(pill);
+    });
+  } else {
+    sec.style.display = 'none';
+  }
+  go('profile', null);
+}
+
+function go(id, el) {
+  document.querySelectorAll('section').forEach(function(s){s.classList.remove('on');});
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.nlinks a').forEach(function(a){a.classList.remove('on');});
+  if (el && el.classList) el.classList.add('on');
+  window.scrollTo(0, 0);
+}
+
+function filter(type, btn) {
+  document.querySelectorAll('.filt').forEach(function(b){b.classList.remove('sel');});
+  btn.classList.add('sel');
+  document.querySelectorAll('.r-card').forEach(function(card){
+    var show = type === 'all'
+      || (type === 'off' && card.dataset.side === 'off')
+      || (type === 'def' && card.dataset.side === 'def')
+      || card.dataset.cls === type;
+    card.classList.toggle('hidden', !show);
+  });
+}
+
+buildRoster();
+</script>
