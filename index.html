@@ -27,8 +27,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .nlinks a.on,.nlinks a:hover{color:var(--white);border-bottom-color:var(--o);}
 .ncta{background:var(--o);color:#fff;border:none;padding:9px 20px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.15s;}
 .ncta:hover{background:var(--ol);}
-
-/* NAV LOGO IMAGE */
 .nlogo-img{width:34px;height:34px;object-fit:contain;flex-shrink:0;}
 
 section{display:none;}
@@ -36,14 +34,9 @@ section.on{display:block;}
 
 /* HOME */
 .home-hero{min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 3rem 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--bd);}
-
-/* Banner image layer */
 .home-hero-banner{position:absolute;inset:0;background-image:url('1500x500.jpeg');background-size:cover;background-position:center top;opacity:0.18;pointer-events:none;}
-
 .home-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,88,10,0.10) 0%,transparent 50%),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px);pointer-events:none;}
-/* Dark gradient over banner so text stays readable */
 .home-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.55) 60%, rgba(10,10,11,0.3) 100%);pointer-events:none;}
-
 .home-hero-bg::after{content:'TIGERS';position:absolute;right:-20px;bottom:-80px;font-family:'Bebas Neue',sans-serif;font-size:340px;color:rgba(255,255,255,0.016);letter-spacing:10px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
 .home-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--o);font-weight:500;margin-bottom:1.75rem;display:flex;align-items:center;gap:10px;position:relative;}
 .home-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--o);}
@@ -60,7 +53,6 @@ section.on{display:block;}
 .page-head{padding:2.75rem 3rem;border-bottom:1px solid var(--bd);display:flex;align-items:flex-end;justify-content:space-between;}
 .page-head h2{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;letter-spacing:3px;line-height:1;}
 .page-head p{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);letter-spacing:2px;margin-top:6px;text-transform:uppercase;}
-.page-head-right{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);text-align:right;letter-spacing:1.5px;line-height:1.8;text-transform:uppercase;}
 
 /* SEARCH FIELD */
 .search-wrap{display:flex;align-items:center;position:relative;}
@@ -75,7 +67,6 @@ section.on{display:block;}
 .filt{padding:0 16px;height:44px;font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:transparent;border:none;color:var(--mu);cursor:pointer;border-bottom:1px solid transparent;transition:all 0.15s;white-space:nowrap;}
 .filt:hover{color:var(--txt);}
 .filt.sel{color:#fff;border-bottom-color:var(--o);}
-
 .roster-grid{display:grid;grid-template-columns:repeat(4,1fr);}
 .r-card{background:var(--blk);cursor:pointer;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);transition:background 0.2s;}
 .r-card:hover{background:var(--s1);}
@@ -98,7 +89,6 @@ section.on{display:block;}
 .profile-back button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--mu);display:flex;align-items:center;gap:8px;transition:color 0.15s;padding:0;}
 .profile-back button::before{content:'←';font-size:14px;}
 .profile-back button:hover{color:var(--txt);}
-
 .profile-hero{display:grid;grid-template-columns:1fr 1fr;min-height:300px;border-bottom:1px solid var(--bd);}
 .profile-hero-left{padding:3.5rem 3rem;border-right:1px solid var(--bd);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
 .profile-hero-left::before{content:'';position:absolute;top:-80px;left:-60px;width:350px;height:350px;background:radial-gradient(circle,rgba(232,88,10,0.07) 0%,transparent 70%);pointer-events:none;}
@@ -112,7 +102,6 @@ section.on{display:block;}
 .pstat-l{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:8px;}
 .pstat-v{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#fff;line-height:1;letter-spacing:1.5px;}
 .pstat-v.sm{font-size:22px;padding-top:6px;}
-
 .profile-body{display:grid;grid-template-columns:2fr 1fr;border-bottom:1px solid var(--bd);}
 .profile-main{padding:3rem;border-right:1px solid var(--bd);}
 .profile-side{padding:3rem;}
@@ -131,14 +120,14 @@ section.on{display:block;}
 
 /* COACHES */
 .coaches-wrap{padding:3rem;}
-.coaches-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-.c-card{background:var(--s1);border:1px solid var(--bd2);padding:2.25rem;display:flex;gap:1.5rem;align-items:flex-start;transition:border-color 0.2s,background 0.2s;}
+.coaches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.c-card{background:var(--s1);border:1px solid var(--bd2);padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:border-color 0.2s,background 0.2s;}
 .c-card:hover{background:var(--s2);border-color:rgba(255,255,255,0.24);}
-.c-av{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;color:#fff;letter-spacing:1.5px;}
+.c-av{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:13px;color:#fff;letter-spacing:1px;}
 .c-av.o{background:var(--o);}
 .c-av.g{background:var(--s3);border:1px solid var(--bd2);}
-.c-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:1.5px;line-height:1;}
-.c-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--o);font-weight:500;margin:5px 0 12px;}
+.c-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;letter-spacing:1.5px;line-height:1;}
+.c-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--o);font-weight:500;margin:5px 0 10px;line-height:1.5;}
 .c-contact{font-size:11px;color:var(--mu);display:flex;align-items:center;gap:6px;margin-top:4px;font-weight:300;}
 
 /* CONTACT */
@@ -174,10 +163,6 @@ section.on{display:block;}
 
 <nav>
   <div class="nlogo" onclick="go('home')">
-    <!-- 
-      LOGO: Replace the src below with your actual logo file path, e.g. src="logo.png"
-      The logo should be placed in the same folder as this index.html file.
-    -->
     <img class="nlogo-img" src="IMG_0204.PNG" alt="Stockbridge Tigers Logo" onerror="this.style.display='none'">
     <div class="nlogo-wordmark">
       <span class="nlogo-top">Stockbridge Tigers</span>
@@ -196,11 +181,6 @@ section.on{display:block;}
 <!-- HOME -->
 <section id="home" class="on">
   <div class="home-hero">
-    <!-- 
-      BANNER IMAGE: Replace the URL in .home-hero-banner's background-image (in the CSS above)
-      with your own photo. Save the image in the same folder and use: url('your-photo.jpg')
-      Recommended: a wide action shot of your team. Opacity is set low (0.18) so text stays readable.
-    -->
     <div class="home-hero-banner"></div>
     <div class="home-hero-bg"></div>
     <div class="home-hero-overlay"></div>
@@ -300,22 +280,131 @@ section.on{display:block;}
   </div>
   <div class="coaches-wrap">
     <div class="coaches-grid">
-      <div class="c-card"><div class="c-av o">HC</div><div><div class="c-name">Kendrick Callier</div><div class="c-role">Head Football Coach | Offensive Coordinator</div><div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> Kendrickcallier2@gmail.com</div><div class="c-contact"><i class="ti ti-brand-twitter" style="font-size:13px"></i> @CoachBama_</div></div></div>
-      <div class="c-card"><div class="c-av g">DC</div><div><div class="c-name">Marlon Moore</div><div class="c-role">Defensive Coordinator</div>
-      <div class="c-card"><div class="c-av o">RB</div><div><div class="c-name">Durand Hannah</div><div class="c-role">RB Coach</div>
-      <div class="c-card"><div class="c-av o">WR</div><div><div class="c-name">Brandon Norwood</div><div class="c-role">WR Coach</div>
-      <div class="c-card"><div class="c-av o">WR</div><div><div class="c-name">Jalen Taylor</div><div class="c-role">WR Coach</div>
-      <div class="c-card"><div class="c-av o">OL</div><div><div class="c-name">Lawrence Kershaw</div><div class="c-role">OL Coach</div>
-      <div class="c-card"><div class="c-av o">OL</div><div><div class="c-name">Ryan Witherspoon</div><div class="c-role">OL Coach</div>
-      <div class="c-card"><div class="c-av o">S</div><div><div class="c-name">Khalil Ladler</div><div class="c-role">Safetys Coach</div>
-      <div class="c-card"><div class="c-av o">CB</div><div><div class="c-name">Kent Bettis</div><div class="c-role">Corners Coach</div>
-      <div class="c-card"><div class="c-av o">LB</div><div><div class="c-name">Trezman Marshall</div><div class="c-role">LBs Coach</div>
-      <div class="c-card"><div class="c-av o">DL</div><div><div class="c-name">Altoine Wilson</div><div class="c-role">DL Coach</div>
-      <div class="c-card"><div class="c-av o">DL</div><div><div class="c-name">Myles Clark</div><div class="c-role">DL Coach</div>
-      <div class="c-card"><div class="c-av o">ST</div><div><div class="c-name">TJ Hill</div><div class="c-role">Special Teams Coach</div>
-      <div class="c-card"><div class="c-av o">K</div><div><div class="c-name">Trae Salmon</div><div class="c-role">Kickers Coach</div>
-      <div class="c-card"><div class="c-av g">AC</div><div><div class="c-name">Deldrick Corbitt</div><div class="c-role">Assistant Coach</div>
-    </div><div class=-card">
+
+      <div class="c-card">
+        <div class="c-av o">HC</div>
+        <div>
+          <div class="c-name">Kendrick Callier</div>
+          <div class="c-role">Head Coach · Offensive Coordinator</div>
+          <div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> Kendrickcallier2@gmail.com</div>
+          <div class="c-contact"><i class="ti ti-brand-twitter" style="font-size:13px"></i> @CoachBama_</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">DC</div>
+        <div>
+          <div class="c-name">Marlon Moore</div>
+          <div class="c-role">Defensive Coordinator</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">RB</div>
+        <div>
+          <div class="c-name">Durand Hannah</div>
+          <div class="c-role">Running Backs Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">WR</div>
+        <div>
+          <div class="c-name">Brandon Norwood</div>
+          <div class="c-role">Wide Receivers Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">WR</div>
+        <div>
+          <div class="c-name">Jalen Taylor</div>
+          <div class="c-role">Wide Receivers Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">OL</div>
+        <div>
+          <div class="c-name">Lawrence Kershaw</div>
+          <div class="c-role">Offensive Line Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">OL</div>
+        <div>
+          <div class="c-name">Ryan Witherspoon</div>
+          <div class="c-role">Offensive Line Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">S</div>
+        <div>
+          <div class="c-name">Khalil Ladler</div>
+          <div class="c-role">Safeties Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">CB</div>
+        <div>
+          <div class="c-name">Kent Bettis</div>
+          <div class="c-role">Cornerbacks Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">LB</div>
+        <div>
+          <div class="c-name">Trezman Marshall</div>
+          <div class="c-role">Linebackers Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">DL</div>
+        <div>
+          <div class="c-name">Altoine Wilson</div>
+          <div class="c-role">Defensive Line Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">DL</div>
+        <div>
+          <div class="c-name">Myles Clark</div>
+          <div class="c-role">Defensive Line Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">ST</div>
+        <div>
+          <div class="c-name">TJ Hill</div>
+          <div class="c-role">Special Teams Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av o">K</div>
+        <div>
+          <div class="c-name">Trae Salmon</div>
+          <div class="c-role">Kickers Coach</div>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-av g">AC</div>
+        <div>
+          <div class="c-name">Deldrick Corbitt</div>
+          <div class="c-role">Assistant Coach</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
