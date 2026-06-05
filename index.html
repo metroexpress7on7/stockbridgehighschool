@@ -231,6 +231,9 @@ section.on{display:block;}
   </div>
   <div class="profile-hero">
     <div class="profile-hero-left">
+      <div id="pPhotoWrap" style="display:none;width:120px;height:160px;overflow:hidden;margin-bottom:1.5rem;position:relative;flex-shrink:0;">
+        <img id="pPhoto" src="" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
       <div class="profile-tag" id="pTag"></div>
       <div class="profile-name" id="pName"></div>
       <div class="profile-school" id="pSchool"></div>
@@ -266,7 +269,7 @@ section.on{display:block;}
           <div class="meas-cell"><div class="meas-label">Class</div><div class="meas-val" id="pMCls"></div></div>
           <div class="meas-cell"><div class="meas-label">Position</div><div class="meas-val" id="pMPos"></div></div>
           <div class="meas-cell"><div class="meas-label">GPA</div><div class="meas-val" id="pMGpa">—</div></div>
-          <div class="meas-cell" style="grid-column:span 2"><div class="meas-label">NCAA ID</div><div class="meas-val" style="font-size:18px;letter-spacing:2px" id="pMNcaa">—</div></div>
+          <div class="meas-cell"><div class="meas-label">NCAA ID</div><div class="meas-val" style="font-size:18px;letter-spacing:1px" id="pMNcaa">—</div></div>
         </div>
       </div>
       <div class="profile-section" style="margin-top:2rem;">
@@ -462,14 +465,14 @@ section.on{display:block;}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
 var players = [
-  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2028", ht:'6\'0"', wt:"160 lbs", num:"#1", school:"Stockbridge HS", side:"off", offers:["UAB","Georgia State","Georgia Tech","FIU","Oregon State","Western Kentucky","Kentucky","Southern Miss","Howard","South Carolina","Kennesaw State","Samford","Liberty","North Carolina","Jacksonville State"],      strengths:"Speed, route running, sharp hands", hudl:"https://www.hudl.com/profile/22258342/Mason-Freeman", ncaaId:"", gpa:"3.0", combine:{forty:"4.45",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility", hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling",       hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership",    hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
-  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism",        hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}}
+  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2028", ht:'6\'0"', wt:"160 lbs", num:"#1", school:"Stockbridge HS", side:"off", offers:["UAB","Georgia State","Georgia Tech","FIU","Oregon State","Western Kentucky","Kentucky","Southern Miss","Howard","South Carolina","Kennesaw State","Samford","Liberty","North Carolina","Jacksonville State"],      strengths:"Speed, route running, sharp hands", hudl:"https://www.hudl.com/profile/22258342/Mason-Freeman", ncaaId:"", gpa:"3.0", combine:{forty:"4.45",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility", hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling",       hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership",    hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
+  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism",        hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""}
 ];
 
 var currentFilter = 'all';
@@ -491,7 +494,7 @@ function buildRoster() {
     card.dataset.name = p.name.toLowerCase();
     card.dataset.pos = p.pos.toLowerCase();
     card.innerHTML =
-      '<div class="r-photo"><div class="r-photo-letter">'+initials+'</div><div class="r-pos-bar"><span class="r-pos-txt">'+posAbbr+'</span><span class="r-jersey">'+p.num+'</span></div></div>'+
+      '<div class="r-photo">'+(p.photo?'<img src="'+p.photo+'" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">':'<div class="r-photo-letter">'+initials+'</div>')+'<div class="r-pos-bar"><span class="r-pos-txt">'+posAbbr+'</span><span class="r-jersey">'+p.num+'</span></div></div>'+
       '<div class="r-info"><div class="r-name">'+p.name+'</div><div class="r-detail">Class of '+p.cls+' · '+p.ht+' · '+p.wt+'</div>'+badgeHtml+'</div>';
     card.addEventListener('click', function(){
       openProfile(parseInt(this.dataset.idx));
@@ -517,6 +520,16 @@ function openProfile(idx) {
   document.getElementById('pTag').textContent = p.pos + ' · Class of ' + p.cls;
   document.getElementById('pName').textContent = p.name;
   document.getElementById('pSchool').textContent = p.school + ' · ' + p.num;
+
+  // Profile photo
+  var photoWrap = document.getElementById('pPhotoWrap');
+  var photoEl = document.getElementById('pPhoto');
+  if (p.photo) {
+    photoEl.src = p.photo;
+    photoWrap.style.display = 'block';
+  } else {
+    photoWrap.style.display = 'none';
+  }
   document.getElementById('pCls').textContent = p.cls;
   document.getElementById('pJersey').textContent = p.num;
   document.getElementById('pHeight').textContent = p.ht;
