@@ -117,6 +117,11 @@ section.on{display:block;}
 .meas-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
 .meas-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
 .profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:0;}
+.combine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);}
+.combine-cell{background:var(--s1);padding:0.9rem 1.1rem;}
+.combine-cell .combine-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
+.combine-cell .combine-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:1px;}
+.combine-empty{font-size:12px;color:var(--mu);font-weight:300;font-style:italic;padding:0.25rem 0;grid-column:span 3;}
 
 /* COACHES */
 .coaches-wrap{padding:3rem;}
@@ -248,8 +253,8 @@ section.on{display:block;}
         <div class="profile-strengths" id="pStrengths"></div>
       </div>
       <div class="profile-section">
-        <div class="profile-section-label">Film</div>
-        <div class="profile-strengths">Game and highlight film available on Hudl upon request. Contact staff using the buttons below.</div>
+        <div class="profile-section-label">Combine &amp; Athletic Testing</div>
+        <div class="combine-grid" id="pCombineGrid"></div>
       </div>
     </div>
     <div class="profile-side">
@@ -260,12 +265,14 @@ section.on{display:block;}
           <div class="meas-cell"><div class="meas-label">Weight</div><div class="meas-val" id="pMWeight"></div></div>
           <div class="meas-cell"><div class="meas-label">Class</div><div class="meas-val" id="pMCls"></div></div>
           <div class="meas-cell"><div class="meas-label">Position</div><div class="meas-val" id="pMPos"></div></div>
+          <div class="meas-cell"><div class="meas-label">GPA</div><div class="meas-val" id="pMGpa">—</div></div>
+          <div class="meas-cell" style="grid-column:span 2"><div class="meas-label">NCAA ID</div><div class="meas-val" style="font-size:18px;letter-spacing:2px" id="pMNcaa">—</div></div>
         </div>
       </div>
       <div class="profile-section" style="margin-top:2rem;">
-        <div class="profile-section-label">Contact</div>
+        <div class="profile-section-label"></div>
         <div class="profile-actions">
-          <button class="btn-fill" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Request Film</button>
+          <button class="btn-fill" id="pHudlBtn" onclick="window.open('#','_blank')">HUDL Link</button>
           <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Inquire</button>
         </div>
       </div>
@@ -455,14 +462,14 @@ section.on{display:block;}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
 var players = [
-  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83", school:"Stockbridge HS", side:"off", offers:["Georgia Tech","South Carolina","Kentucky"],      strengths:"Speed, route running, sharp hands"},
-  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive"},
-  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length"},
-  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility"},
-  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection"},
-  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling"},
-  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership"},
-  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism"}
+  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83", school:"Stockbridge HS", side:"off", offers:["Georgia Tech","South Carolina","Kentucky"],      strengths:"Speed, route running, sharp hands", hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility", hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling",       hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership",    hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}},
+  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism",        hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}}
 ];
 
 var currentFilter = 'all';
@@ -519,6 +526,45 @@ function openProfile(idx) {
   document.getElementById('pMCls').textContent = p.cls;
   var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,3).toUpperCase();
   document.getElementById('pMPos').textContent = posAbbr;
+  document.getElementById('pMGpa').textContent = p.gpa || '—';
+  document.getElementById('pMNcaa').textContent = p.ncaaId || '—';
+
+  // HUDL button
+  var hudlBtn = document.getElementById('pHudlBtn');
+  if (p.hudl) {
+    hudlBtn.onclick = function(){ window.open(p.hudl, '_blank'); };
+    hudlBtn.style.opacity = '1';
+    hudlBtn.style.pointerEvents = 'auto';
+  } else {
+    hudlBtn.onclick = null;
+    hudlBtn.style.opacity = '0.45';
+    hudlBtn.style.pointerEvents = 'none';
+  }
+
+  // Combine grid
+  var combineGrid = document.getElementById('pCombineGrid');
+  combineGrid.innerHTML = '';
+  var combineFields = [
+    {key:'forty',   label:'40-Yard Dash', unit:'s'},
+    {key:'vertical',label:'Vertical',     unit:'in'},
+    {key:'broad',   label:'Broad Jump',   unit:'ft'},
+    {key:'shuttle', label:'5-10-5 Shuttle',unit:'s'},
+    {key:'bench',   label:'Bench Press',  unit:'reps'}
+  ];
+  var hasAny = combineFields.some(function(f){ return p.combine && p.combine[f.key]; });
+  if (!hasAny) {
+    combineGrid.style.background = 'none';
+    combineGrid.innerHTML = '<div class="combine-empty">Testing data not yet recorded.</div>';
+  } else {
+    combineGrid.style.background = 'var(--bd)';
+    combineFields.forEach(function(f){
+      var val = (p.combine && p.combine[f.key]) ? p.combine[f.key] : '—';
+      var cell = document.createElement('div');
+      cell.className = 'combine-cell';
+      cell.innerHTML = '<div class="combine-label">'+f.label+'</div><div class="combine-val">'+val+(val!=='—'?'<span style="font-size:12px;color:var(--mu);font-family:\'DM Mono\',monospace;margin-left:3px;">'+f.unit+'</span>':'')+'</div>';
+      combineGrid.appendChild(cell);
+    });
+  }
   document.getElementById('pStrengths').textContent = p.strengths;
   var wrap = document.getElementById('pOffers');
   wrap.innerHTML = '';
