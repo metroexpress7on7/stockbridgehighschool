@@ -15,11 +15,8 @@
 }
 html{scroll-behavior:smooth;}
 body{background:var(--blk);color:var(--txt);font-family:'DM Sans',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;}
-
-/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;background:rgba(10,10,11,0.97);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
 .nlogo{display:flex;align-items:center;gap:24px;cursor:pointer;text-decoration:none;}
-.nlogo-mark{width:30px;height:30px;background:var(--o);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;}
 .nlogo-top{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:2.5px;display:block;line-height:1;}
 .nlogo-bot{font-family:'DM Mono',monospace;font-size:8.5px;color:var(--mu);letter-spacing:2.5px;text-transform:uppercase;display:block;margin-top:3px;}
 .nlinks{display:flex;}
@@ -28,11 +25,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 2.5r
 .ncta{background:var(--o);color:#fff;border:none;padding:9px 20px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:background 0.15s;}
 .ncta:hover{background:var(--ol);}
 .nlogo-img{width:34px;height:34px;object-fit:contain;flex-shrink:0;}
-
 section{display:none;}
 section.on{display:block;}
-
-/* HOME */
 .home-hero{min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 3rem 4rem;position:relative;overflow:hidden;border-bottom:1px solid var(--bd);}
 .home-hero-banner{position:absolute;inset:0;background-image:url('1500x500.jpeg');background-size:cover;background-position:center top;opacity:0.18;pointer-events:none;}
 .home-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,88,10,0.10) 0%,transparent 50%),repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.022) 59px,rgba(255,255,255,0.022) 60px);pointer-events:none;}
@@ -48,21 +42,15 @@ section.on{display:block;}
 .btn-fill:hover{background:var(--ol);}
 .btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--bd2);padding:12px 28px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;}
 .btn-ghost:hover{border-color:rgba(255,255,255,0.4);color:#fff;}
-
-/* PAGE HEAD */
 .page-head{padding:2.75rem 3rem;border-bottom:1px solid var(--bd);display:flex;align-items:flex-end;justify-content:space-between;}
 .page-head h2{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;letter-spacing:3px;line-height:1;}
 .page-head p{font-family:'DM Mono',monospace;font-size:10px;color:var(--mu);letter-spacing:2px;margin-top:6px;text-transform:uppercase;}
-
-/* SEARCH FIELD */
 .search-wrap{display:flex;align-items:center;position:relative;}
 .search-input{background:var(--s2);border:1px solid var(--bd2);border-radius:999px;padding:9px 20px 9px 40px;color:var(--txt);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;outline:none;width:260px;transition:border-color 0.15s,background 0.15s;}
 .search-input::placeholder{color:var(--mu);}
 .search-input:focus{border-color:rgba(255,255,255,0.35);background:var(--s3);}
 .search-icon{position:absolute;left:14px;color:var(--mu);pointer-events:none;display:flex;align-items:center;}
 .search-icon svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;}
-
-/* ROSTER */
 .filter-strip{display:flex;align-items:center;border-bottom:1px solid var(--bd);padding:0 3rem;overflow-x:auto;}
 .filt{padding:0 16px;height:44px;font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:transparent;border:none;color:var(--mu);cursor:pointer;border-bottom:1px solid transparent;transition:all 0.15s;white-space:nowrap;}
 .filt:hover{color:var(--txt);}
@@ -83,8 +71,6 @@ section.on{display:block;}
 .r-badge{display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:8.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border:1px solid;}
 .rb-offer{border-color:rgba(232,88,10,0.35);color:var(--ol);}
 .rb-pros{border-color:rgba(255,255,255,0.08);color:var(--mu);}
-
-/* PLAYER PROFILE */
 .profile-back{padding:1rem 3rem;border-bottom:1px solid var(--bd);}
 .profile-back button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--mu);display:flex;align-items:center;gap:8px;transition:color 0.15s;padding:0;}
 .profile-back button::before{content:'←';font-size:14px;}
@@ -95,6 +81,9 @@ section.on{display:block;}
 .profile-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:500;margin-bottom:0.75rem;position:relative;}
 .profile-name{font-family:'Bebas Neue',sans-serif;font-size:72px;color:#fff;line-height:0.92;letter-spacing:3px;position:relative;}
 .profile-school{font-size:13px;color:var(--mu);margin-top:0.75rem;font-weight:300;position:relative;}
+.profile-contact{font-size:12px;color:var(--mu);margin-top:0.5rem;font-weight:300;position:relative;display:flex;flex-direction:column;gap:4px;}
+.profile-contact a{color:var(--mu);text-decoration:none;transition:color 0.15s;}
+.profile-contact a:hover{color:var(--txt);}
 .profile-hero-right{display:grid;grid-template-columns:1fr 1fr;}
 .pstat{padding:2.25rem 2rem;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);display:flex;flex-direction:column;justify-content:flex-end;}
 .pstat:nth-child(even){border-right:none;}
@@ -116,14 +105,13 @@ section.on{display:block;}
 .meas-cell{background:var(--s1);padding:1rem 1.25rem;}
 .meas-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
 .meas-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
-.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:0;}
+.meas-val.sm{font-size:13px;padding-top:5px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.5px;}
+.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .combine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);}
 .combine-cell{background:var(--s1);padding:0.9rem 1.1rem;}
 .combine-cell .combine-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
 .combine-cell .combine-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:1px;}
 .combine-empty{font-size:12px;color:var(--mu);font-weight:300;font-style:italic;padding:0.25rem 0;grid-column:span 3;}
-
-/* COACHES */
 .coaches-wrap{padding:3rem;}
 .coaches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .c-card{background:var(--s1);border:1px solid var(--bd2);padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:border-color 0.2s,background 0.2s;}
@@ -134,8 +122,6 @@ section.on{display:block;}
 .c-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;letter-spacing:1.5px;line-height:1;}
 .c-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--o);font-weight:500;margin:5px 0 10px;line-height:1.5;}
 .c-contact{font-size:11px;color:var(--mu);display:flex;align-items:center;gap:6px;margin-top:4px;font-weight:300;}
-
-/* CONTACT */
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--bd);}
 .contact-left{padding:3rem;border-right:1px solid var(--bd);}
 .contact-left h3{font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff;letter-spacing:2px;margin-bottom:1rem;line-height:1.1;}
@@ -152,8 +138,6 @@ section.on{display:block;}
 .fg-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .submit-btn{width:100%;background:var(--o);color:#fff;border:none;padding:13px;font-family:'DM Mono',monospace;font-weight:500;font-size:10px;cursor:pointer;letter-spacing:2px;text-transform:uppercase;transition:background 0.15s;margin-top:6px;}
 .submit-btn:hover{background:var(--ol);}
-
-/* FOOTER */
 .foot{padding:2.5rem 3rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;}
 .foot-left{display:flex;flex-direction:column;gap:5px;}
 .foot-school{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:2.5px;}
@@ -183,7 +167,6 @@ section.on{display:block;}
   <button class="ncta" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Coach Inquiry</button>
 </nav>
 
-<!-- HOME -->
 <section id="home" class="on">
   <div class="home-hero">
     <div class="home-hero-banner"></div>
@@ -199,11 +182,10 @@ section.on{display:block;}
   </div>
 </section>
 
-<!-- ROSTER -->
 <section id="roster">
   <div class="page-head">
     <div>
-      <h2>2025 Roster</h2>
+      <h2>Prospect Roster</h2>
       <p>Stockbridge High School · Henry County, Georgia · GHSA 5A</p>
     </div>
     <div class="search-wrap">
@@ -217,14 +199,14 @@ section.on{display:block;}
     <button class="filt sel" onclick="filter('all',this)">All Players</button>
     <button class="filt" onclick="filter('off',this)">Offense</button>
     <button class="filt" onclick="filter('def',this)">Defense</button>
-    <button class="filt" onclick="filter('2026',this)">Class of 2026</button>
     <button class="filt" onclick="filter('2027',this)">Class of 2027</button>
     <button class="filt" onclick="filter('2028',this)">Class of 2028</button>
+    <button class="filt" onclick="filter('2029',this)">Class of 2029</button>
+    <button class="filt" onclick="filter('2030',this)">Class of 2030</button>
   </div>
   <div class="roster-grid" id="rosterGrid"></div>
 </section>
 
-<!-- PLAYER PROFILE -->
 <section id="profile">
   <div class="profile-back">
     <button onclick="go('roster',document.querySelectorAll('.nlinks a')[1])">Back to Roster</button>
@@ -237,6 +219,7 @@ section.on{display:block;}
       <div class="profile-tag" id="pTag"></div>
       <div class="profile-name" id="pName"></div>
       <div class="profile-school" id="pSchool"></div>
+      <div class="profile-contact" id="pContact"></div>
     </div>
     <div class="profile-hero-right">
       <div class="pstat"><div class="pstat-l">Class</div><div class="pstat-v" id="pCls"></div></div>
@@ -269,13 +252,13 @@ section.on{display:block;}
           <div class="meas-cell"><div class="meas-label">Class</div><div class="meas-val" id="pMCls"></div></div>
           <div class="meas-cell"><div class="meas-label">Position</div><div class="meas-val" id="pMPos"></div></div>
           <div class="meas-cell"><div class="meas-label">GPA</div><div class="meas-val" id="pMGpa">—</div></div>
-          <div class="meas-cell"><div class="meas-label">NCAA ID</div><div class="meas-val" style="font-size:18px;letter-spacing:1px" id="pMNcaa">—</div></div>
+          <div class="meas-cell"><div class="meas-label">Twitter</div><div class="meas-val sm" id="pMTwitter">—</div></div>
         </div>
       </div>
       <div class="profile-section" style="margin-top:2rem;">
         <div class="profile-section-label"></div>
         <div class="profile-actions">
-          <button class="btn-fill" id="pHudlBtn" onclick="window.open('#','_blank')">HUDL Link</button>
+          <button class="btn-fill" id="pHudlBtn">HUDL Link</button>
           <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Inquire</button>
         </div>
       </div>
@@ -283,150 +266,42 @@ section.on{display:block;}
   </div>
 </section>
 
-<!-- COACHES -->
 <section id="coaches">
   <div class="page-head">
     <div><h2>Coaching Staff</h2><p>All college staff inquiries answered within 24 hours.</p></div>
   </div>
   <div class="coaches-wrap">
     <div class="coaches-grid">
-
-      <div class="c-card">
-        <div class="c-av o">HC</div>
-        <div>
-          <div class="c-name">Kendrick Callier</div>
-          <div class="c-role">Head Coach · Offensive Coordinator</div>
-          <div class="c-contact"><i class="ti ti-mail" style="font-size:13px"></i> Kendrickcallier2@gmail.com</div>
-          <div class="c-contact"><i class="ti ti-brand-twitter" style="font-size:13px"></i> @CoachBama_</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av g">DC</div>
-        <div>
-          <div class="c-name">Marlon Moore</div>
-          <div class="c-role">Defensive Coordinator</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">RB</div>
-        <div>
-          <div class="c-name">Durand Hannah</div>
-          <div class="c-role">Running Backs Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">WR</div>
-        <div>
-          <div class="c-name">Brandon Norwood</div>
-          <div class="c-role">Wide Receivers Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">WR</div>
-        <div>
-          <div class="c-name">Jalen Taylor</div>
-          <div class="c-role">Wide Receivers Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">OL</div>
-        <div>
-          <div class="c-name">Lawrence Kershaw</div>
-          <div class="c-role">Offensive Line Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">OL</div>
-        <div>
-          <div class="c-name">Ryan Witherspoon</div>
-          <div class="c-role">Offensive Line Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av g">S</div>
-        <div>
-          <div class="c-name">Khalil Ladler</div>
-          <div class="c-role">Safeties Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av g">CB</div>
-        <div>
-          <div class="c-name">Kent Bettis</div>
-          <div class="c-role">Cornerbacks Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av g">LB</div>
-        <div>
-          <div class="c-name">Trezman Marshall</div>
-          <div class="c-role">Linebackers Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av g">DL</div>
-        <div>
-          <div class="c-name">Altoine Wilson</div>
-          <div class="c-role">Defensive Line Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av g">DL</div>
-        <div>
-          <div class="c-name">Myles Clark</div>
-          <div class="c-role">Defensive Line Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">ST</div>
-        <div>
-          <div class="c-name">TJ Hill</div>
-          <div class="c-role">Special Teams Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">K</div>
-        <div>
-          <div class="c-name">Trae Salmon</div>
-          <div class="c-role">Kickers Coach</div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-av o">AC</div>
-        <div>
-          <div class="c-name">Deldrick Corbitt</div>
-          <div class="c-role">Assistant Coach</div>
-        </div>
-      </div>
-
+      <div class="c-card"><div class="c-av o">HC</div><div><div class="c-name">Kendrick Callier</div><div class="c-role">Head Coach · Offensive Coordinator</div><div class="c-contact">Kendrickcallier2@gmail.com</div><div class="c-contact">(404) 663-9665</div><div class="c-contact">@CoachBama_</div></div></div>
+      <div class="c-card"><div class="c-av g">DC</div><div><div class="c-name">Marlon Moore</div><div class="c-role">Defensive Coordinator</div></div></div>
+      <div class="c-card"><div class="c-av o">RB</div><div><div class="c-name">Durand Hannah</div><div class="c-role">Running Backs Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">WR</div><div><div class="c-name">Brandon Norwood</div><div class="c-role">Wide Receivers Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">WR</div><div><div class="c-name">Jalen Taylor</div><div class="c-role">Wide Receivers Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">OL</div><div><div class="c-name">Lawrence Kershaw</div><div class="c-role">Offensive Line Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">OL</div><div><div class="c-name">Ryan Witherspoon</div><div class="c-role">Offensive Line Coach</div></div></div>
+      <div class="c-card"><div class="c-av g">S</div><div><div class="c-name">Khalil Ladler</div><div class="c-role">Safeties Coach</div></div></div>
+      <div class="c-card"><div class="c-av g">CB</div><div><div class="c-name">Kent Bettis</div><div class="c-role">Cornerbacks Coach</div></div></div>
+      <div class="c-card"><div class="c-av g">LB</div><div><div class="c-name">Trezman Marshall</div><div class="c-role">Linebackers Coach</div></div></div>
+      <div class="c-card"><div class="c-av g">DL</div><div><div class="c-name">Altoine Wilson</div><div class="c-role">Defensive Line Coach</div></div></div>
+      <div class="c-card"><div class="c-av g">DL</div><div><div class="c-name">Myles Clark</div><div class="c-role">Defensive Line Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">ST</div><div><div class="c-name">TJ Hill</div><div class="c-role">Special Teams Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">K</div><div><div class="c-name">Trae Salmon</div><div class="c-role">Kickers Coach</div></div></div>
+      <div class="c-card"><div class="c-av o">AC</div><div><div class="c-name">Deldrick Corbitt</div><div class="c-role">Assistant Coach</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="page-head"><div><h2>Coach Inquiry</h2><p>Express interest or request film on a Stockbridge athlete.</p></div></div>
   <div class="contact-inner">
     <div class="contact-left">
       <h3>Connect with<br>Our Staff</h3>
       <p>We make it simple for college programs to connect with Stockbridge athletes. Fill out the form and our staff will respond within 24 hours.</p>
-      <div class="contact-detail"><div class="cd-label">Email</div><div class="cd-val">recruiting@stockbridgehs.edu</div></div>
-      <div class="contact-detail"><div class="cd-label">Twitter / X</div><div class="cd-val">@SHSRecruiting</div></div>
-      <div class="contact-detail"><div class="cd-label">Location</div><div class="cd-val">Stockbridge, Georgia · Henry County</div></div>
+      <div class="contact-detail"><div class="cd-label">Head Coach</div><div class="cd-val">Kendrick Callier</div></div>
+      <div class="contact-detail"><div class="cd-label">Email</div><div class="cd-val">Kendrickcallier2@gmail.com</div></div>
+      <div class="contact-detail"><div class="cd-label">Phone</div><div class="cd-val">(404) 663-9665</div></div>
+      <div class="contact-detail"><div class="cd-label">Twitter / X</div><div class="cd-val">@BridgeBoysFB</div></div>
+      <div class="contact-detail"><div class="cd-label">Location</div><div class="cd-val">1151 Old Conyers Rd, Stockbridge, GA 30281</div></div>
     </div>
     <div class="contact-right">
       <div class="fg-2">
@@ -438,7 +313,7 @@ section.on{display:block;}
         <div class="fg"><label>Role</label><select><option>Recruiting Coordinator</option><option>Position Coach</option><option>Head Coach</option><option>GA / Analyst</option><option>Other</option></select></div>
       </div>
       <div class="fg"><label>Email</label><input type="email" placeholder="coach@school.edu"></div>
-      <div class="fg"><label>Athlete(s) of Interest</label><input type="text" id="contactAthleteField" placeholder="e.g. Mason Freeman, WR '27"></div>
+      <div class="fg"><label>Athlete(s) of Interest</label><input type="text" id="contactAthleteField" placeholder="e.g. Mason Freeman, WR '28"></div>
       <div class="fg"><label>Message</label><textarea placeholder="Position needs, timeline, visit request, etc."></textarea></div>
       <button class="submit-btn">Submit Inquiry</button>
     </div>
@@ -465,155 +340,122 @@ section.on{display:block;}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
 var players = [
-  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2028", ht:'6\'0"', wt:"160 lbs", num:"#1", school:"Stockbridge HS", side:"off", offers:["UAB","Georgia State","Georgia Tech","FIU","Oregon State","Western Kentucky","Kentucky","Southern Miss","Howard","South Carolina","Kennesaw State","Samford","Liberty","North Carolina","Jacksonville State"],      strengths:"Speed, route running, sharp hands", hudl:"https://www.hudl.com/profile/22258342/Mason-Freeman", ncaaId:"", gpa:"3.0", combine:{forty:"4.45",vertical:"",broad:"",shuttle:"",bench:""}, photo:"mason.jpg"},
-  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
-  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
-  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility", hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
-  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection",     hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
-  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling",       hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
-  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership",    hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""},
-  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism",        hudl:"", ncaaId:"", gpa:"", combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""}, photo:""}
+  // CLASS OF 2027
+  {name:"Zyaire Patrick",    pos:"Defensive Back",   cls:"2027",ht:'6\'1"', wt:"168 lbs",num:"#7",  school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@Zyaire_Patrick1",phone:"(470) 262-6839",email:"zyairepatrick17@gmail.com",hudl:"http://www.hudl.com/profile/22267257",offers:["Liberty","Georgia State","Troy"],strengths:"Ball hawk, versatile, explosive in coverage",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Keaton Vanhorn",    pos:"Linebacker",       cls:"2027",ht:'5\'11"',wt:"205 lbs",num:"#48", school:"Stockbridge HS",side:"def",gpa:"3.7",twitter:"@ValidKeaton",phone:"(678) 935-8143",email:"keatonvanhorn48@gmail.com",hudl:"http://www.hudl.com/profile/20779037",offers:[],strengths:"Motor, instincts, high football IQ",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Joshua Scott",      pos:"Quarterback",      cls:"2027",ht:'6\'0"', wt:"190 lbs",num:"#5",  school:"Stockbridge HS",side:"off",gpa:"3.6",twitter:"@JoshScott_2027",phone:"(404) 547-2473",email:"phatscott26@gmail.com",hudl:"http://www.hudl.com/profile/19378043",offers:["Georgia State","FIU","NC State"],strengths:"Leadership, arm strength, poise under pressure",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Andrew Wilson",     pos:"Linebacker",       cls:"2027",ht:'6\'0"', wt:"217 lbs",num:"#0",  school:"Stockbridge HS",side:"def",gpa:"3.6",twitter:"@TreDub_3",phone:"(678) 592-6937",email:"trewilson104@gmail.com",hudl:"http://www.hudl.com/profile/22510903",offers:["New Mexico State","New Hampshire","Arizona State"],strengths:"Instincts, tackling, sideline-to-sideline range",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Elijah Patterson",  pos:"Defensive Back",   cls:"2027",ht:'6\'0"', wt:"160 lbs",num:"#11", school:"Stockbridge HS",side:"def",gpa:"3.1",twitter:"@ElijahP_2027",phone:"(585) 317-4629",email:"Elijahpatterson881@gmail.com",hudl:"http://www.hudl.com/profile/21970000",offers:["Alabama State","Colorado State"],strengths:"Coverage, athleticism, ball skills",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Chaz Huffman",      pos:"TE / DE",          cls:"2027",ht:'6\'2"', wt:"190 lbs",num:"ATH", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@ChazHuffman5",phone:"(470) 301-3227",email:"chazhuff8@gmail.com",hudl:"http://www.hudl.com/profile/19379065",offers:[],strengths:"Versatility, length, two-way pass-rush ability",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Jayden Smith",      pos:"Defensive Tackle", cls:"2027",ht:'6\'2"', wt:"262 lbs",num:"#54", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@ImJaydenSmith",phone:"(470) 715-3180",email:"imjaydenalsmith@gmail.com",hudl:"http://www.hudl.com/profile/19550982",offers:[],strengths:"Powerful interior presence, motor, run stuffing",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  // CLASS OF 2028
+  {name:"Gavin Kinchen",     pos:"Wide Receiver",    cls:"2028",ht:'5\'8"', wt:"163 lbs",num:"#6",  school:"Stockbridge HS",side:"off",gpa:"3.8",twitter:"@GEEBO_6",phone:"(678) 209-7237",email:"Kinchengavin6@gmail.com",hudl:"http://www.hudl.com/profile/22376416",offers:["Oregon State","FIU","Georgia State"],strengths:"Quickness, route running, yards after catch",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Mason Freeman",     pos:"Wide Receiver",    cls:"2028",ht:'5\'11"',wt:"160 lbs",num:"#1",  school:"Stockbridge HS",side:"off",gpa:"3.0",twitter:"@D1_MasonFreeman",phone:"(678) 698-6064",email:"masonfreeman2010@gmail.com",hudl:"https://www.hudl.com/profile/22258342/Mason-Freeman",offers:["UAB","Georgia State","Georgia Tech","FIU","Oregon State","Western Kentucky","Kentucky","Southern Miss","Howard","South Carolina","Kennesaw State","Samford","Liberty","North Carolina","Jacksonville State"],strengths:"Speed, route running, sharp hands",combine:{forty:"4.45",vertical:"",broad:"",shuttle:"",bench:""},photo:"mason.jpg"},
+  {name:"Jeremiah Magee",    pos:"Offensive Line",   cls:"2028",ht:'6\'3"', wt:"320 lbs",num:"#78", school:"Stockbridge HS",side:"off",gpa:"2.7",twitter:"@JeremiahM2028",phone:"(404) 490-5323",email:"jeremiahmagee2028@gmail.com",hudl:"http://www.hudl.com/profile/22928980",offers:["Florida International","East Carolina"],strengths:"Elite size, footwork, high ceiling at tackle",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Titus Mapp",        pos:"Linebacker",       cls:"2028",ht:'5\'11"',wt:"203 lbs",num:"#29", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@TitusMappJr10",phone:"(678) 596-0159",email:"titusmapp20@gmail.com",hudl:"http://www.hudl.com/profile/23029756",offers:[],strengths:"Physicality, blitz package, pass coverage",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Caleb Thomas",      pos:"TE / DE",          cls:"2028",ht:'6\'3"', wt:"230 lbs",num:"#31", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@31Plays_",phone:"(470) 249-2424",email:"janettathomas@gmail.com",hudl:"http://www.hudl.com/profile/7643632",offers:["FIU","Western Kentucky","Liberty"],strengths:"Motor, pass rush, elite length",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Chandler Green",    pos:"Offensive Line",   cls:"2028",ht:'6\'0"', wt:"272 lbs",num:"#65", school:"Stockbridge HS",side:"off",gpa:"2.0",twitter:"@ChandlerPGreen",phone:"(404) 668-4704",email:"chandlergreen542@gmail.com",hudl:"http://www.hudl.com/profile/23029740",offers:[],strengths:"Powerful base, drive blocking, interior anchor",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Malachi Everett",   pos:"Linebacker",       cls:"2028",ht:'5\'9"', wt:"208 lbs",num:"#52", school:"Stockbridge HS",side:"def",gpa:"4.2",twitter:"@MalachiEverett8",phone:"(901) 488-0441",email:"mjeverett400@gmail.com",hudl:"http://www.hudl.com/profile/22279680",offers:[],strengths:"Elite motor, 4.2 GPA scholar-athlete, physical tackler",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Jordin Edwards",    pos:"TE / DE",          cls:"2028",ht:'6\'1"', wt:"197 lbs",num:"ATH", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@JordinEdwards8",phone:"(470) 593-8322",email:"JordinEdwards8@gmail.com",hudl:"http://www.hudl.com/profile/25646499",offers:["Alabama State"],strengths:"Versatility, athleticism, motor off the edge",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Isaiah Davis",      pos:"Defensive Back",   cls:"2028",ht:'5\'9"', wt:"178 lbs",num:"#24", school:"Stockbridge HS",side:"def",gpa:"3.3",twitter:"@IsaiahDavis2028",phone:"(659) 305-9398",email:"zayyydavis3@gmail.com",hudl:"http://www.hudl.com/profile/18905702",offers:[],strengths:"Athleticism, physicality, press coverage",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Chris Harden",      pos:"Wide Receiver",    cls:"2028",ht:'6\'1"', wt:"175 lbs",num:"ATH", school:"Stockbridge HS",side:"off",gpa:"3.2",twitter:"@LuhChrisJr2028",phone:"(678) 886-3316",email:"Hardenc03@gmail.com",hudl:"http://www.hudl.com/profile/22390795",offers:[],strengths:"Size, contested catches, red zone threat",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Xzabein Atkins",    pos:"DE / LB",          cls:"2028",ht:'6\'1"', wt:"187 lbs",num:"#15", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@Xzabein5",phone:"(770) 828-4684",email:"zayatkins13@gmail.com",hudl:"http://www.hudl.com/profile/30126460",offers:["Georgia State"],strengths:"Edge setting, athleticism, motor",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Cody Hood",         pos:"DT / OL",          cls:"2028",ht:'6\'1"', wt:"265 lbs",num:"#57", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@TheCodyHood8",phone:"(470) 338-4856",email:"codyqhood8@gmail.com",hudl:"",offers:[],strengths:"Interior strength, versatile two-way lineman",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  // CLASS OF 2029
+  {name:"Dominic Tucker",    pos:"Running Back",     cls:"2029",ht:'5\'11"',wt:"185 lbs",num:"#13", school:"Stockbridge HS",side:"off",gpa:"3.6",twitter:"@DominicT_2029",phone:"(404) 450-2137",email:"Dxtucker@outlook.com",hudl:"http://www.hudl.com/profile/23640767",offers:["Samford","Georgia State","Florida International"],strengths:"Vision, burst, balance, big-play ability",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Jevon Medlock",     pos:"Defensive Back",   cls:"2029",ht:'5\'9"', wt:"170 lbs",num:"#25", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@D1Von1029",phone:"(404) 884-5947",email:"Jevonmedlock2029@gmail.com",hudl:"http://www.hudl.com/profile/26613048",offers:["Georgia State","Florida International","Akron"],strengths:"Instincts, physicality in run support, ball hawk",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Jacobi Footman",    pos:"Quarterback",      cls:"2029",ht:'5\'10"',wt:"170 lbs",num:"#15", school:"Stockbridge HS",side:"off",gpa:"3.4",twitter:"@J32k29",phone:"(470) 726-7006",email:"jacobifootman@gmail.com",hudl:"http://www.hudl.com/profile/24519527",offers:[],strengths:"Mobility, football IQ, upside",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Khalil Jeffreys",   pos:"Defensive Back",   cls:"2029",ht:'6\'0"', wt:"185 lbs",num:"#20", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@Khalil_Jeffreys",phone:"(943) 206-7031",email:"khaliljeffreys11@icloud.com",hudl:"http://www.hudl.com/profile/25985044",offers:[],strengths:"Length, athleticism, coverage versatility",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"King Berthelot",    pos:"Defensive Back",   cls:"2029",ht:'6\'0"', wt:"195 lbs",num:"#10", school:"Stockbridge HS",side:"def",gpa:"3.6",twitter:"@21_KingBert",phone:"(678) 612-2992",email:"kbert999@icloud.com",hudl:"http://www.hudl.com/profile/26623837",offers:[],strengths:"Size, physicality, high-ceiling safety",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  // CLASS OF 2030
+  {name:"Kentavious Terrell", pos:"Wide Receiver",   cls:"2030",ht:'6\'1"', wt:"166 lbs",num:"#11", school:"Stockbridge HS",side:"off",gpa:"3.0",twitter:"@KentaviousT2",phone:"(470) 430-8396",email:"Kjterrell8@icloud.com",hudl:"",offers:["Georgia State","Florida International"],strengths:"Length, separation, big-play ability",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""}
 ];
 
-var currentFilter = 'all';
+var currentFilter='all';
 
-function buildRoster() {
-  var grid = document.getElementById('rosterGrid');
-  grid.innerHTML = '';
-  var sorted = players.map(function(p,i){return {p:p,i:i};}).sort(function(a,b){
-    return parseInt(a.p.num.replace('#','')) - parseInt(b.p.num.replace('#',''));
+function buildRoster(){
+  var grid=document.getElementById('rosterGrid');
+  grid.innerHTML='';
+  var sorted=players.map(function(p,i){return{p:p,i:i};}).sort(function(a,b){
+    if(a.p.cls!==b.p.cls)return parseInt(a.p.cls)-parseInt(b.p.cls);
+    var na=parseInt(a.p.num.replace('#',''))||999,nb=parseInt(b.p.num.replace('#',''))||999;
+    return na-nb;
   });
-  sorted.forEach(function(obj) {
-  var p = obj.p; var i = obj.i;
-    var initials = p.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
-    var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
-    var badgeHtml = p.offers.length
-      ? '<span class="r-badge rb-offer">'+p.offers.length+' Offer'+(p.offers.length>1?'s':'')+'</span>'
-      : '<span class="r-badge rb-pros">Prospect</span>';
-    var card = document.createElement('div');
-    card.className = 'r-card';
-    card.dataset.cls = p.cls;
-    card.dataset.side = p.side;
-    card.dataset.idx = i;
-    card.dataset.name = p.name.toLowerCase();
-    card.dataset.pos = p.pos.toLowerCase();
-    card.innerHTML =
-      '<div class="r-photo">'+(p.photo?'<img src="'+p.photo+'" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">':'<div class="r-photo-letter">'+initials+'</div>')+'<div class="r-pos-bar"><span class="r-pos-txt">'+posAbbr+'</span><span class="r-jersey">'+p.num+'</span></div></div>'+
-      '<div class="r-info"><div class="r-name">'+p.name+'</div><div class="r-detail">Class of '+p.cls+' · '+p.ht+' · '+p.wt+'</div>'+badgeHtml+'</div>';
-    card.addEventListener('click', function(){
-      openProfile(parseInt(this.dataset.idx));
-    });
+  sorted.forEach(function(obj){
+    var p=obj.p,i=obj.i;
+    var initials=p.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
+    var posAbbr=p.pos.replace(' / ',' ').split(' ').map(function(w){return w[0];}).join('').slice(0,3).toUpperCase();
+    var badge=p.offers.length?'<span class="r-badge rb-offer">'+p.offers.length+' Offer'+(p.offers.length>1?'s':'')+'</span>':'<span class="r-badge rb-pros">Prospect</span>';
+    var card=document.createElement('div');
+    card.className='r-card';
+    card.dataset.cls=p.cls;card.dataset.side=p.side;card.dataset.idx=i;
+    card.dataset.name=p.name.toLowerCase();card.dataset.pos=p.pos.toLowerCase();
+    card.innerHTML='<div class="r-photo">'+(p.photo?'<img src="'+p.photo+'" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">':'<div class="r-photo-letter">'+initials+'</div>')+'<div class="r-pos-bar"><span class="r-pos-txt">'+posAbbr+'</span><span class="r-jersey">'+p.num+'</span></div></div><div class="r-info"><div class="r-name">'+p.name+'</div><div class="r-detail">Class of '+p.cls+' · '+p.ht+' · '+p.wt+'</div>'+badge+'</div>';
+    card.addEventListener('click',function(){openProfile(parseInt(this.dataset.idx));});
     grid.appendChild(card);
   });
 }
 
-function searchPlayers(query) {
-  var q = query.toLowerCase().trim();
-  document.querySelectorAll('.r-card').forEach(function(card) {
-    var matchesSearch = !q || card.dataset.name.includes(q) || card.dataset.pos.includes(q);
-    var matchesFilter = currentFilter === 'all'
-      || (currentFilter === 'off' && card.dataset.side === 'off')
-      || (currentFilter === 'def' && card.dataset.side === 'def')
-      || card.dataset.cls === currentFilter;
-    card.classList.toggle('hidden', !(matchesSearch && matchesFilter));
+function searchPlayers(query){
+  var q=query.toLowerCase().trim();
+  document.querySelectorAll('.r-card').forEach(function(card){
+    var ms=!q||card.dataset.name.includes(q)||card.dataset.pos.includes(q);
+    var mf=currentFilter==='all'||(currentFilter==='off'&&card.dataset.side==='off')||(currentFilter==='def'&&card.dataset.side==='def')||card.dataset.cls===currentFilter;
+    card.classList.toggle('hidden',!(ms&&mf));
   });
 }
 
-function openProfile(idx) {
-  var p = players[idx];
-  document.getElementById('pTag').textContent = p.pos + ' · Class of ' + p.cls;
-  document.getElementById('pName').textContent = p.name;
-  document.getElementById('pSchool').textContent = p.school + ' · ' + p.num;
-
-  // Profile photo
-  var photoWrap = document.getElementById('pPhotoWrap');
-  var photoEl = document.getElementById('pPhoto');
-  if (p.photo) {
-    photoEl.src = p.photo;
-    photoWrap.style.display = 'block';
-  } else {
-    photoWrap.style.display = 'none';
-  }
-  document.getElementById('pCls').textContent = p.cls;
-  document.getElementById('pJersey').textContent = p.num;
-  document.getElementById('pHeight').textContent = p.ht;
-  document.getElementById('pWeight').textContent = p.wt;
-  document.getElementById('pMHeight').textContent = p.ht;
-  document.getElementById('pMWeight').textContent = p.wt.replace(' lbs','');
-  document.getElementById('pMCls').textContent = p.cls;
-  var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,3).toUpperCase();
-  document.getElementById('pMPos').textContent = posAbbr;
-  document.getElementById('pMGpa').textContent = p.gpa || '—';
-  document.getElementById('pMNcaa').textContent = p.ncaaId || '—';
-
-  // HUDL button
-  var hudlBtn = document.getElementById('pHudlBtn');
-  if (p.hudl) {
-    hudlBtn.onclick = function(){ window.open(p.hudl, '_blank'); };
-    hudlBtn.style.opacity = '1';
-    hudlBtn.style.pointerEvents = 'auto';
-  } else {
-    hudlBtn.onclick = null;
-    hudlBtn.style.opacity = '0.45';
-    hudlBtn.style.pointerEvents = 'none';
-  }
-
-  // Combine grid
-  var combineGrid = document.getElementById('pCombineGrid');
-  combineGrid.innerHTML = '';
-  var combineFields = [
-    {key:'forty',   label:'40-Yard Dash', unit:'s'},
-    {key:'vertical',label:'Vertical',     unit:'in'},
-    {key:'broad',   label:'Broad Jump',   unit:'ft'},
-    {key:'shuttle', label:'5-10-5 Shuttle',unit:'s'},
-    {key:'bench',   label:'Bench Press',  unit:'reps'}
-  ];
-  var hasAny = combineFields.some(function(f){ return p.combine && p.combine[f.key]; });
-  if (!hasAny) {
-    combineGrid.style.background = 'none';
-    combineGrid.innerHTML = '<div class="combine-empty">Testing data not yet recorded.</div>';
-  } else {
-    combineGrid.style.background = 'var(--bd)';
-    combineFields.forEach(function(f){
-      var val = (p.combine && p.combine[f.key]) ? p.combine[f.key] : '—';
-      var cell = document.createElement('div');
-      cell.className = 'combine-cell';
-      cell.innerHTML = '<div class="combine-label">'+f.label+'</div><div class="combine-val">'+val+(val!=='—'?'<span style="font-size:12px;color:var(--mu);font-family:\'DM Mono\',monospace;margin-left:3px;">'+f.unit+'</span>':'')+'</div>';
-      combineGrid.appendChild(cell);
-    });
-  }
-  document.getElementById('pStrengths').textContent = p.strengths;
-  var wrap = document.getElementById('pOffers');
-  wrap.innerHTML = '';
-  var sec = document.getElementById('pOffersSection');
-  if (p.offers.length) {
-    sec.style.display = 'block';
-    p.offers.forEach(function(o){
-      var pill = document.createElement('span');
-      pill.className = 'offer-pill';
-      pill.textContent = o;
-      wrap.appendChild(pill);
-    });
-  } else {
-    sec.style.display = 'none';
-  }
-  go('profile', null);
+function openProfile(idx){
+  var p=players[idx];
+  document.getElementById('pTag').textContent=p.pos+' · Class of '+p.cls;
+  document.getElementById('pName').textContent=p.name;
+  document.getElementById('pSchool').textContent=p.school+' · '+p.num;
+  var contactEl=document.getElementById('pContact');
+  contactEl.innerHTML='';
+  if(p.phone){var sp=document.createElement('span');sp.textContent=p.phone;contactEl.appendChild(sp);}
+  if(p.email){var sa=document.createElement('a');sa.href='mailto:'+p.email;sa.textContent=p.email;contactEl.appendChild(sa);}
+  if(p.twitter){var st=document.createElement('a');st.href='https://x.com/'+p.twitter.replace('@','');st.target='_blank';st.textContent=p.twitter;contactEl.appendChild(st);}
+  var pw=document.getElementById('pPhotoWrap'),pe=document.getElementById('pPhoto');
+  if(p.photo){pe.src=p.photo;pw.style.display='block';}else{pw.style.display='none';}
+  document.getElementById('pCls').textContent=p.cls;
+  document.getElementById('pJersey').textContent=p.num;
+  document.getElementById('pHeight').textContent=p.ht;
+  document.getElementById('pWeight').textContent=p.wt;
+  document.getElementById('pMHeight').textContent=p.ht;
+  document.getElementById('pMWeight').textContent=p.wt.replace(' lbs','');
+  document.getElementById('pMCls').textContent=p.cls;
+  document.getElementById('pMPos').textContent=p.pos.replace(' / ',' ').split(' ').map(function(w){return w[0];}).join('').slice(0,4).toUpperCase();
+  document.getElementById('pMGpa').textContent=p.gpa||'—';
+  var twEl=document.getElementById('pMTwitter');twEl.textContent=p.twitter||'—';twEl.className='meas-val sm';
+  var hb=document.getElementById('pHudlBtn');
+  if(p.hudl){hb.onclick=function(){window.open(p.hudl,'_blank');};hb.style.opacity='1';hb.style.pointerEvents='auto';}
+  else{hb.onclick=null;hb.style.opacity='0.45';hb.style.pointerEvents='none';}
+  var cg=document.getElementById('pCombineGrid');cg.innerHTML='';
+  var cf=[{key:'forty',label:'40-Yard Dash',unit:'s'},{key:'vertical',label:'Vertical',unit:'in'},{key:'broad',label:'Broad Jump',unit:'ft'},{key:'shuttle',label:'5-10-5 Shuttle',unit:'s'},{key:'bench',label:'Bench Press',unit:'reps'}];
+  var ha=cf.some(function(f){return p.combine&&p.combine[f.key];});
+  if(!ha){cg.style.background='none';cg.innerHTML='<div class="combine-empty">Testing data not yet recorded.</div>';}
+  else{cg.style.background='var(--bd)';cf.forEach(function(f){var v=(p.combine&&p.combine[f.key])?p.combine[f.key]:'—';var c=document.createElement('div');c.className='combine-cell';c.innerHTML='<div class="combine-label">'+f.label+'</div><div class="combine-val">'+v+(v!=='—'?'<span style="font-size:12px;color:var(--mu);font-family:\'DM Mono\',monospace;margin-left:3px;">'+f.unit+'</span>':'')+'</div>';cg.appendChild(c);});}
+  document.getElementById('pStrengths').textContent=p.strengths;
+  var wrap=document.getElementById('pOffers');wrap.innerHTML='';
+  var sec=document.getElementById('pOffersSection');
+  if(p.offers.length){sec.style.display='block';p.offers.forEach(function(o){var pill=document.createElement('span');pill.className='offer-pill';pill.textContent=o;wrap.appendChild(pill);});}
+  else{sec.style.display='none';}
+  go('profile',null);
 }
 
-function go(id, el) {
+function go(id,el){
   document.querySelectorAll('section').forEach(function(s){s.classList.remove('on');});
   document.getElementById(id).classList.add('on');
   document.querySelectorAll('.nlinks a').forEach(function(a){a.classList.remove('on');});
-  if (el && el.classList) el.classList.add('on');
-  window.scrollTo(0, 0);
+  if(el&&el.classList)el.classList.add('on');
+  window.scrollTo(0,0);
 }
 
-function filter(type, btn) {
-  currentFilter = type;
+function filter(type,btn){
+  currentFilter=type;
   document.querySelectorAll('.filt').forEach(function(b){b.classList.remove('sel');});
   btn.classList.add('sel');
-  var searchVal = document.getElementById('playerSearch').value;
-  searchPlayers(searchVal);
+  searchPlayers(document.getElementById('playerSearch').value);
 }
 
 buildRoster();
