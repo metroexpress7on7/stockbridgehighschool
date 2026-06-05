@@ -116,7 +116,16 @@ section.on{display:block;}
 .meas-cell{background:var(--s1);padding:1rem 1.25rem;}
 .meas-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
 .meas-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
-.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:0;}
+.meas-val.meas-sm{font-size:16px;padding-top:4px;}
+.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+/* Combine grid */
+.combine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);}
+.combine-cell{background:var(--s1);padding:1.25rem 1.25rem;}
+.combine-cell.wide{grid-column:span 3;}
+.combine-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
+.combine-val{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:1px;line-height:1.1;}
+.combine-val.tbd{color:var(--mu2);font-size:18px;padding-top:4px;}
 
 /* COACHES */
 .coaches-wrap{padding:3rem;}
@@ -247,9 +256,17 @@ section.on{display:block;}
         <div class="profile-section-label">Strengths &amp; Attributes</div>
         <div class="profile-strengths" id="pStrengths"></div>
       </div>
+      <!-- COMBINE & TESTING -->
       <div class="profile-section">
-        <div class="profile-section-label">Film</div>
-        <div class="profile-strengths">Game and highlight film available on Hudl upon request. Contact staff using the buttons below.</div>
+        <div class="profile-section-label">Combine &amp; Testing</div>
+        <div class="combine-grid" id="pCombine">
+          <div class="combine-cell"><div class="combine-label">40-Yard Dash</div><div class="combine-val tbd" id="p40">—</div></div>
+          <div class="combine-cell"><div class="combine-label">Vertical Jump</div><div class="combine-val tbd" id="pVert">—</div></div>
+          <div class="combine-cell"><div class="combine-label">Broad Jump</div><div class="combine-val tbd" id="pBroad">—</div></div>
+          <div class="combine-cell"><div class="combine-label">Shuttle (5-10-5)</div><div class="combine-val tbd" id="pShuttle">—</div></div>
+          <div class="combine-cell"><div class="combine-label">Bench (225 lbs)</div><div class="combine-val tbd" id="pBench">—</div></div>
+          <div class="combine-cell"><div class="combine-label">Squat Max</div><div class="combine-val tbd" id="pSquat">—</div></div>
+        </div>
       </div>
     </div>
     <div class="profile-side">
@@ -260,12 +277,16 @@ section.on{display:block;}
           <div class="meas-cell"><div class="meas-label">Weight</div><div class="meas-val" id="pMWeight"></div></div>
           <div class="meas-cell"><div class="meas-label">Class</div><div class="meas-val" id="pMCls"></div></div>
           <div class="meas-cell"><div class="meas-label">Position</div><div class="meas-val" id="pMPos"></div></div>
+          <div class="meas-cell"><div class="meas-label">GPA</div><div class="meas-val meas-sm" id="pGPA"></div></div>
+          <div class="meas-cell"><div class="meas-label">NCAA ID</div><div class="meas-val meas-sm" id="pNCAA"></div></div>
         </div>
       </div>
+      <!-- PROFILE ACTIONS — no label, just the buttons -->
       <div class="profile-section" style="margin-top:2rem;">
-        <div class="profile-section-label">Contact</div>
         <div class="profile-actions">
-          <button class="btn-fill" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Request Film</button>
+          <a id="pHudlBtn" href="#" target="_blank" style="text-decoration:none;">
+            <button class="btn-fill" style="width:100%">HUDL Link</button>
+          </a>
           <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Inquire</button>
         </div>
       </div>
@@ -455,14 +476,73 @@ section.on{display:block;}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
 var players = [
-  {name:"Mason Freeman",  pos:"Wide Receiver",    cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83", school:"Stockbridge HS", side:"off", offers:["Georgia Tech","South Carolina","Kentucky"],      strengths:"Speed, route running, sharp hands"},
-  {name:"Zyaire Patrick", pos:"Defensive Back",   cls:"2027", ht:'5\'11"',wt:"170 lbs", num:"#2",  school:"Stockbridge HS", side:"def", offers:["Howard","Liberty","Charlotte","Western Kentucky"],strengths:"Ball hawk, versatile, explosive"},
-  {name:"Caleb Thomas",   pos:"Defensive End",    cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91", school:"Stockbridge HS", side:"def", offers:["FIU","Liberty","Western Kentucky"],              strengths:"Motor, pass rush, elite length"},
-  {name:"Player Name",    pos:"Quarterback",      cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",  school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Leadership, arm strength, mobility"},
-  {name:"Player Name",    pos:"Running Back",     cls:"2027", ht:'5\'10"',wt:"185 lbs", num:"#24", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Vision, burst, pass protection"},
-  {name:"Player Name",    pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72", school:"Stockbridge HS", side:"off", offers:[],                                                strengths:"Size, footwork, high ceiling"},
-  {name:"Player Name",    pos:"Linebacker",       cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Instincts, tackling, leadership"},
-  {name:"Player Name",    pos:"Cornerback",       cls:"2027", ht:'5\'11"',wt:"165 lbs", num:"#14", school:"Stockbridge HS", side:"def", offers:[],                                                strengths:"Hips, coverage, athleticism"}
+  {
+    name:"Mason Freeman", pos:"Wide Receiver", cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83",
+    school:"Stockbridge HS", side:"off",
+    offers:["Georgia Tech","South Carolina","Kentucky"],
+    strengths:"Speed, route running, sharp hands",
+    hudl:"https://www.hudl.com",
+    gpa:"3.4", ncaa:"2312345678",
+    combine:{ forty:"4.45", vert:'38"', broad:"10\'2"', shuttle:"4.28", bench:"—", squat:"—" }
+  },
+  {
+    name:"Zyaire Patrick", pos:"Defensive Back", cls:"2027", ht:'5\'11"', wt:"170 lbs", num:"#2",
+    school:"Stockbridge HS", side:"def",
+    offers:["Howard","Liberty","Charlotte","Western Kentucky"],
+    strengths:"Ball hawk, versatile, explosive",
+    hudl:"https://www.hudl.com",
+    gpa:"3.1", ncaa:"2312345679",
+    combine:{ forty:"4.52", vert:'36"', broad:"9\'8"', shuttle:"4.35", bench:"—", squat:"—" }
+  },
+  {
+    name:"Caleb Thomas", pos:"Defensive End", cls:"2027", ht:'6\'3"', wt:"220 lbs", num:"#91",
+    school:"Stockbridge HS", side:"def",
+    offers:["FIU","Liberty","Western Kentucky"],
+    strengths:"Motor, pass rush, elite length",
+    hudl:"https://www.hudl.com",
+    gpa:"2.9", ncaa:"2312345680",
+    combine:{ forty:"4.72", vert:'32"', broad:"9\'4"', shuttle:"4.55", bench:"14", squat:"—" }
+  },
+  {
+    name:"Player Name", pos:"Quarterback", cls:"2026", ht:'6\'2"', wt:"195 lbs", num:"#1",
+    school:"Stockbridge HS", side:"off", offers:[],
+    strengths:"Leadership, arm strength, mobility",
+    hudl:"https://www.hudl.com",
+    gpa:"—", ncaa:"—",
+    combine:{ forty:"—", vert:"—", broad:"—", shuttle:"—", bench:"—", squat:"—" }
+  },
+  {
+    name:"Player Name", pos:"Running Back", cls:"2027", ht:'5\'10"', wt:"185 lbs", num:"#24",
+    school:"Stockbridge HS", side:"off", offers:[],
+    strengths:"Vision, burst, pass protection",
+    hudl:"https://www.hudl.com",
+    gpa:"—", ncaa:"—",
+    combine:{ forty:"—", vert:"—", broad:"—", shuttle:"—", bench:"—", squat:"—" }
+  },
+  {
+    name:"Player Name", pos:"Offensive Tackle", cls:"2028", ht:'6\'5"', wt:"280 lbs", num:"#72",
+    school:"Stockbridge HS", side:"off", offers:[],
+    strengths:"Size, footwork, high ceiling",
+    hudl:"https://www.hudl.com",
+    gpa:"—", ncaa:"—",
+    combine:{ forty:"—", vert:"—", broad:"—", shuttle:"—", bench:"—", squat:"—" }
+  },
+  {
+    name:"Player Name", pos:"Linebacker", cls:"2026", ht:'6\'1"', wt:"215 lbs", num:"#55",
+    school:"Stockbridge HS", side:"def", offers:[],
+    strengths:"Instincts, tackling, leadership",
+    hudl:"https://www.hudl.com",
+    gpa:"—", ncaa:"—",
+    combine:{ forty:"—", vert:"—", broad:"—", shuttle:"—", bench:"—", squat:"—" }
+  },
+  {
+    name:"Player Name", pos:"Cornerback", cls:"2027", ht:'5\'11"', wt:"165 lbs", num:"#14",
+    school:"Stockbridge HS", side:"def", offers:[],
+    strengths:"Hips, coverage, athleticism",
+    hudl:"https://www.hudl.com",
+    gpa:"—", ncaa:"—",
+    combine:{ forty:"—", vert:"—", broad:"—", shuttle:"—", bench:"—", squat:"—" }
+  }
 ];
 
 var currentFilter = 'all';
@@ -505,6 +585,18 @@ function searchPlayers(query) {
   });
 }
 
+function setCombineVal(id, val) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  if (!val || val === '—') {
+    el.textContent = '—';
+    el.className = 'combine-val tbd';
+  } else {
+    el.textContent = val;
+    el.className = 'combine-val';
+  }
+}
+
 function openProfile(idx) {
   var p = players[idx];
   document.getElementById('pTag').textContent = p.pos + ' · Class of ' + p.cls;
@@ -517,9 +609,34 @@ function openProfile(idx) {
   document.getElementById('pMHeight').textContent = p.ht;
   document.getElementById('pMWeight').textContent = p.wt.replace(' lbs','');
   document.getElementById('pMCls').textContent = p.cls;
+  document.getElementById('pGPA').textContent = p.gpa || '—';
+  document.getElementById('pNCAA').textContent = p.ncaa || '—';
   var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,3).toUpperCase();
   document.getElementById('pMPos').textContent = posAbbr;
   document.getElementById('pStrengths').textContent = p.strengths;
+
+  // Hudl link
+  var hudlBtn = document.getElementById('pHudlBtn');
+  if (p.hudl && p.hudl !== '#') {
+    hudlBtn.href = p.hudl;
+    hudlBtn.style.pointerEvents = 'auto';
+    hudlBtn.querySelector('button').style.opacity = '1';
+  } else {
+    hudlBtn.href = '#';
+    hudlBtn.style.pointerEvents = 'none';
+    hudlBtn.querySelector('button').style.opacity = '0.4';
+  }
+
+  // Combine data
+  var c = p.combine || {};
+  setCombineVal('p40', c.forty);
+  setCombineVal('pVert', c.vert);
+  setCombineVal('pBroad', c.broad);
+  setCombineVal('pShuttle', c.shuttle);
+  setCombineVal('pBench', c.bench);
+  setCombineVal('pSquat', c.squat);
+
+  // Offers
   var wrap = document.getElementById('pOffers');
   wrap.innerHTML = '';
   var sec = document.getElementById('pOffersSection');
