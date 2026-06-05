@@ -480,7 +480,11 @@ var currentFilter = 'all';
 function buildRoster() {
   var grid = document.getElementById('rosterGrid');
   grid.innerHTML = '';
-  players.forEach(function(p, i) {
+  var sorted = players.map(function(p,i){return {p:p,i:i};}).sort(function(a,b){
+    return parseInt(a.p.num.replace('#','')) - parseInt(b.p.num.replace('#',''));
+  });
+  sorted.forEach(function(obj) {
+  var p = obj.p; var i = obj.i;
     var initials = p.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2);
     var posAbbr = p.pos.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
     var badgeHtml = p.offers.length
