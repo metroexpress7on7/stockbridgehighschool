@@ -377,7 +377,6 @@ function buildRoster(){
   var grid=document.getElementById('rosterGrid');
   grid.innerHTML='';
   var sorted=players.map(function(p,i){return{p:p,i:i};}).sort(function(a,b){
-    if(a.p.cls!==b.p.cls)return parseInt(a.p.cls)-parseInt(b.p.cls);
     var na=parseInt(a.p.num.replace('#',''))||999,nb=parseInt(b.p.num.replace('#',''))||999;
     return na-nb;
   });
