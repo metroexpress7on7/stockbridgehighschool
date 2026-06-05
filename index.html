@@ -171,7 +171,7 @@ section.on{display:block;}
 <body>
 
 <nav>
-  <div class="nlogo" onclick="go('home')">
+  <div class="nlogo" id="navLogo">
     <img class="nlogo-img" src="IMG_0204.PNG" alt="Stockbridge Tigers Logo" onerror="this.style.display='none'">
     <div class="nlogo-wordmark">
       <span class="nlogo-top">Stockbridge Tigers</span>
@@ -179,12 +179,12 @@ section.on{display:block;}
     </div>
   </div>
   <div class="nlinks">
-    <a class="on" onclick="go('home',this)">Home</a>
-    <a onclick="go('roster',this)">Roster</a>
-    <a onclick="go('coaches',this)">Staff</a>
-    <a onclick="go('contact',this)">Recruiting</a>
+    <a class="on" data-nav="home">Home</a>
+    <a data-nav="roster">Roster</a>
+    <a data-nav="coaches">Staff</a>
+    <a data-nav="contact">Recruiting</a>
   </div>
-  <button class="ncta" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Coach Inquiry</button>
+  <button class="ncta" data-nav="contact">Coach Inquiry</button>
 </nav>
 
 <!-- HOME -->
@@ -197,8 +197,8 @@ section.on{display:block;}
     <h1>Tigers<br><em>Football</em></h1>
     <p class="home-hero-sub">Developing elite athletes for the next level. Stockbridge High School competes in GHSA 5A out of Henry County, Georgia. Film available on Hudl — college staff messages answered within 24 hours.</p>
     <div class="home-hero-actions">
-      <button class="btn-fill" onclick="go('roster',document.querySelectorAll('.nlinks a')[1])">View Prospects</button>
-      <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Coach Inquiry</button>
+      <button class="btn-fill" data-nav="roster">View Prospects</button>
+      <button class="btn-ghost" data-nav="contact">Coach Inquiry</button>
     </div>
   </div>
 </section>
@@ -231,7 +231,7 @@ section.on{display:block;}
 <!-- PLAYER PROFILE -->
 <section id="profile">
   <div class="profile-back">
-    <button onclick="go('roster',document.querySelectorAll('.nlinks a')[1])">Back to Roster</button>
+    <button id="profileBackBtn">Back to Roster</button>
   </div>
   <div class="profile-hero">
     <div class="profile-hero-left">
@@ -287,7 +287,7 @@ section.on{display:block;}
           <a id="pHudlBtn" href="#" target="_blank" style="text-decoration:none;">
             <button class="btn-fill" style="width:100%">HUDL Link</button>
           </a>
-          <button class="btn-ghost" onclick="go('contact',document.querySelectorAll('.nlinks a')[3])">Inquire</button>
+          <button class="btn-ghost" data-nav="contact">Inquire</button>
         </div>
       </div>
     </div>
@@ -475,6 +475,8 @@ section.on{display:block;}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+
 var players = [
   {
     name:"Mason Freeman", pos:"Wide Receiver", cls:"2027", ht:'6\'1"', wt:"175 lbs", num:"#83",
@@ -671,6 +673,25 @@ function filter(type, btn) {
 }
 
 buildRoster();
+
+// Attach all navigation event listeners here
+document.querySelectorAll('[data-nav]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var target = this.getAttribute('data-nav');
+    var navLink = document.querySelector('.nlinks a[data-nav="' + target + '"]');
+    go(target, navLink);
+  });
+});
+
+document.getElementById('navLogo').addEventListener('click', function() {
+  go('home', document.querySelector('.nlinks a[data-nav="home"]'));
+});
+
+document.getElementById('profileBackBtn').addEventListener('click', function() {
+  go('roster', document.querySelector('.nlinks a[data-nav="roster"]'));
+});
+
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
