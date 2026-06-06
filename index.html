@@ -100,18 +100,28 @@ section.on{display:block;}
 .profile-section-label::after{content:'';flex:1;height:1px;background:var(--bd);}
 .offers-wrap{display:flex;flex-wrap:wrap;gap:8px;}
 .offer-pill{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;padding:6px 14px;border:1px solid var(--bd2);color:var(--txt);letter-spacing:0.5px;}
-.profile-strengths{font-size:14px;color:var(--mu);line-height:1.85;font-weight:300;}
+
+/* ── SEASON STATS ── */
+.stats-season-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;}
+.stats-season-label::after{content:'';flex:1;height:1px;background:var(--bd);}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--bd);}
+.stat-box{background:var(--s1);padding:1.5rem 1.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:100px;position:relative;overflow:hidden;transition:background 0.2s;}
+.stat-box:hover{background:var(--s2);}
+.stat-box::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:transform 0.25s;}
+.stat-box:hover::after{transform:scaleX(1);}
+.stat-box-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;line-height:1.4;}
+.stat-box-val{font-family:'Bebas Neue',sans-serif;font-size:44px;color:#fff;line-height:1;letter-spacing:1px;margin-top:0.5rem;}
+.stat-box-val.med{font-size:32px;padding-top:4px;}
+.stat-box-val.sm{font-size:22px;padding-top:8px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0px;}
+.stat-box-sub{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);margin-top:6px;letter-spacing:1px;}
+.stats-empty{font-size:13px;color:var(--mu);font-weight:300;font-style:italic;padding:1.5rem 0;}
+
 .measurables-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);}
 .meas-cell{background:var(--s1);padding:1rem 1.25rem;}
 .meas-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
 .meas-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
 .meas-val.sm{font-size:13px;padding-top:5px;font-family:'DM Mono',monospace;font-weight:500;letter-spacing:0.5px;}
 .profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.combine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);}
-.combine-cell{background:var(--s1);padding:0.9rem 1.1rem;}
-.combine-cell .combine-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:5px;}
-.combine-cell .combine-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:1px;}
-.combine-empty{font-size:12px;color:var(--mu);font-weight:300;font-style:italic;padding:0.25rem 0;grid-column:span 3;}
 .coaches-wrap{padding:3rem;}
 .coaches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .c-card{background:var(--s1);border:1px solid var(--bd2);padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:border-color 0.2s,background 0.2s;}
@@ -160,36 +170,25 @@ section.on{display:block;}
 .mobile-menu .ncta{margin-top:1.5rem;width:100%;text-align:center;padding:14px;}
 
 @media(max-width:768px){
-  /* NAV */
   nav{padding:0 1.25rem;}
   .nlinks,.ncta{display:none;}
   .nav-hamburger{display:flex;}
-
-  /* HOME HERO */
   .home-hero{padding:3.5rem 1.25rem 2.5rem;min-height:480px;}
   .home-hero h1{font-size:72px;letter-spacing:2px;}
   .home-hero-sub{font-size:13px;margin-top:1.25rem;}
   .home-hero-actions{flex-direction:column;gap:8px;}
   .home-hero-actions .btn-fill,.home-hero-actions .btn-ghost{width:100%;text-align:center;padding:14px;}
-
-  /* PAGE HEADS */
   .page-head{flex-direction:column;align-items:flex-start;gap:1rem;padding:1.5rem 1.25rem;}
   .page-head h2{font-size:36px;}
   .search-input{width:100%;}
   .search-wrap{width:100%;}
-
-  /* FILTER STRIP */
   .filter-strip{padding:0 1.25rem;gap:0;}
   .filt{padding:0 10px;font-size:9px;letter-spacing:1.5px;}
-
-  /* ROSTER GRID — 2 columns on mobile */
   .roster-grid{grid-template-columns:repeat(2,1fr);}
   .r-card:nth-child(4n){border-right:1px solid var(--bd);}
   .r-card:nth-child(2n){border-right:none;}
   .r-name{font-size:17px;}
   .r-info{padding:10px 12px 14px;}
-
-  /* PROFILE */
   .profile-back{padding:0.75rem 1.25rem;}
   .profile-hero{grid-template-columns:1fr;min-height:auto;}
   .profile-hero-left{padding:2rem 1.25rem;border-right:none;border-bottom:1px solid var(--bd);}
@@ -199,29 +198,21 @@ section.on{display:block;}
   .profile-body{grid-template-columns:1fr;}
   .profile-main{padding:1.75rem 1.25rem;border-right:none;border-bottom:1px solid var(--bd);}
   .profile-side{padding:1.75rem 1.25rem;}
-  .combine-grid{grid-template-columns:repeat(2,1fr);}
-  .combine-empty{grid-column:span 2;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat-box-val{font-size:36px;}
   .profile-actions{grid-template-columns:1fr 1fr;}
-
-  /* COACHES */
   .coaches-wrap{padding:1.25rem;}
   .coaches-grid{grid-template-columns:1fr 1fr;gap:10px;}
   .c-card{padding:1.25rem;gap:0.9rem;}
   .c-name{font-size:15px;}
-
-  /* CONTACT */
   .contact-inner{grid-template-columns:1fr;}
   .contact-left{padding:1.75rem 1.25rem;border-right:none;border-bottom:1px solid var(--bd);}
   .contact-right{padding:1.75rem 1.25rem;}
   .fg-2{grid-template-columns:1fr;}
-
-  /* FOOTER */
   .foot{flex-direction:column;gap:1.25rem;align-items:flex-start;padding:1.75rem 1.25rem;}
   .foot-links{flex-wrap:wrap;gap:8px;}
 }
-
 @media(max-width:420px){
-  /* Tighten further on very small screens */
   .home-hero h1{font-size:56px;}
   .roster-grid{grid-template-columns:1fr 1fr;}
   .coaches-grid{grid-template-columns:1fr;}
@@ -327,12 +318,8 @@ section.on{display:block;}
         <div class="offers-wrap" id="pOffers"></div>
       </div>
       <div class="profile-section">
-        <div class="profile-section-label">Strengths &amp; Attributes</div>
-        <div class="profile-strengths" id="pStrengths"></div>
-      </div>
-      <div class="profile-section">
-        <div class="profile-section-label">Combine &amp; Athletic Testing</div>
-        <div class="combine-grid" id="pCombineGrid"></div>
+        <div class="profile-section-label">Season Stats</div>
+        <div id="pStatsGrid"></div>
       </div>
     </div>
     <div class="profile-side">
@@ -431,35 +418,92 @@ section.on{display:block;}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script>
+// ── STAT TEMPLATES BY POSITION GROUP ──
+// Each entry: { key, label, unit }
+// 'key' matches the stats object on each player
+var STAT_TEMPLATES = {
+  WR:  [{key:'rec',label:'Receptions'},{key:'recYds',label:'Rec Yards'},{key:'recTD',label:'Rec TDs'},{key:'ypr',label:'Yds / Rec'},{key:'long',label:'Long'},{key:'drops',label:'Drops'}],
+  QB:  [{key:'compPct',label:'Comp %'},{key:'passYds',label:'Pass Yards'},{key:'passTD',label:'Pass TDs'},{key:'int',label:'INTs'},{key:'rushYds',label:'Rush Yards'},{key:'rushTD',label:'Rush TDs'}],
+  RB:  [{key:'carries',label:'Carries'},{key:'rushYds',label:'Rush Yards'},{key:'rushTD',label:'Rush TDs'},{key:'ypc',label:'Yds / Carry'},{key:'long',label:'Long'},{key:'rec',label:'Receptions'}],
+  OL:  [{key:'pancakes',label:'Pancake Blocks'},{key:'allowedSacks',label:'Sacks Allowed'},{key:'gamesStarted',label:'Games Started'}],
+  DE:  [{key:'tackles',label:'Tackles'},{key:'sacks',label:'Sacks'},{key:'tfl',label:'TFLs'},{key:'ff',label:'Forced Fum'},{key:'qbHurries',label:'QB Hurries'},{key:'passDefl',label:'Pass Def'}],
+  DT:  [{key:'tackles',label:'Tackles'},{key:'sacks',label:'Sacks'},{key:'tfl',label:'TFLs'},{key:'ff',label:'Forced Fum'},{key:'qbHurries',label:'QB Hurries'},{key:'gamesStarted',label:'Games Started'}],
+  LB:  [{key:'tackles',label:'Tackles'},{key:'sacks',label:'Sacks'},{key:'tfl',label:'TFLs'},{key:'int',label:'INTs'},{key:'ff',label:'Forced Fum'},{key:'passDefl',label:'Pass Def'}],
+  DB:  [{key:'tackles',label:'Tackles'},{key:'int',label:'INTs'},{key:'passDefl',label:'Pass Def'},{key:'ff',label:'Forced Fum'},{key:'tfl',label:'TFLs'},{key:'td',label:'Def TDs'}],
+  TE:  [{key:'rec',label:'Receptions'},{key:'recYds',label:'Rec Yards'},{key:'recTD',label:'Rec TDs'},{key:'sacks',label:'Sacks'},{key:'tfl',label:'TFLs'},{key:'gamesStarted',label:'Games Started'}],
+  ATH: [{key:'rec',label:'Receptions'},{key:'recYds',label:'Rec Yards'},{key:'tackles',label:'Tackles'},{key:'passDefl',label:'Pass Def'},{key:'td',label:'Total TDs'},{key:'gamesStarted',label:'Games Started'}]
+};
+
+function posGroup(pos){
+  var p=pos.toUpperCase();
+  if(p.includes('QUARTER')||p==='QB') return 'QB';
+  if(p.includes('RUNNING')||p==='RB') return 'RB';
+  if(p.includes('WIDE')||p==='WR') return 'WR';
+  if(p.includes('TIGHT')||p==='TE') return 'TE';
+  if(p.includes('OFFENSIVE LINE')||p.includes(' OL')||p==='OL') return 'OL';
+  if(p.includes('DEFENSIVE TACKLE')||p==='DT') return 'DT';
+  if(p.includes('DEFENSIVE END')||p==='DE') return 'DE';
+  if(p.includes('LINEBACKER')||p==='LB') return 'LB';
+  if(p.includes('DEFENSIVE BACK')||p==='DB'||p==='CB'||p.includes('SAFETY')) return 'DB';
+  if(p.includes('ATH')) return 'ATH';
+  if(p.includes('TE')||p.includes('DE')) return 'TE';
+  if(p.includes('DT')||p.includes('OL')) return 'DT';
+  return 'ATH';
+}
+
 var players = [
   // CLASS OF 2027
-  {name:"Zyaire Patrick",    pos:"Defensive Back",   cls:"2027",ht:'6\'1"', wt:"168 lbs",num:"#7",  school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@Zyaire_Patrick1",phone:"(470) 262-6839",email:"zyairepatrick17@gmail.com",hudl:"http://www.hudl.com/profile/22267257",offers:["Liberty","Georgia State","Troy"],strengths:"Ball hawk, versatile, explosive in coverage",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"zyaire.jpg"},
-  {name:"Keaton Vanhorn",    pos:"Linebacker",       cls:"2027",ht:'5\'11"',wt:"205 lbs",num:"#48", school:"Stockbridge HS",side:"def",gpa:"3.7",twitter:"@ValidKeaton",phone:"(678) 935-8143",email:"keatonvanhorn48@gmail.com",hudl:"http://www.hudl.com/profile/20779037",offers:[],strengths:"Motor, instincts, high football IQ",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Joshua Scott",      pos:"Quarterback",      cls:"2027",ht:'6\'0"', wt:"190 lbs",num:"#5",  school:"Stockbridge HS",side:"off",gpa:"3.6",twitter:"@JoshScott_2027",phone:"(404) 547-2473",email:"phatscott26@gmail.com",hudl:"http://www.hudl.com/profile/19378043",offers:["Georgia State","FIU","NC State"],strengths:"Leadership, arm strength, poise under pressure",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"josh.jpg"},
-  {name:"Andrew Wilson",     pos:"Linebacker",       cls:"2027",ht:'6\'0"', wt:"217 lbs",num:"#0",  school:"Stockbridge HS",side:"def",gpa:"3.6",twitter:"@TreDub_3",phone:"(678) 592-6937",email:"trewilson104@gmail.com",hudl:"http://www.hudl.com/profile/22510903",offers:["New Mexico State","New Hampshire","Arizona State"],strengths:"Instincts, tackling, sideline-to-sideline range",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Elijah Patterson",  pos:"Defensive Back",   cls:"2027",ht:'6\'0"', wt:"160 lbs",num:"#11", school:"Stockbridge HS",side:"def",gpa:"3.1",twitter:"@ElijahP_2027",phone:"(585) 317-4629",email:"Elijahpatterson881@gmail.com",hudl:"http://www.hudl.com/profile/21970000",offers:["Alabama State","Colorado State"],strengths:"Coverage, athleticism, ball skills",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Chaz Huffman",      pos:"TE / DE",          cls:"2027",ht:'6\'2"', wt:"190 lbs",num:"ATH", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@ChazHuffman5",phone:"(470) 301-3227",email:"chazhuff8@gmail.com",hudl:"http://www.hudl.com/profile/19379065",offers:[],strengths:"Versatility, length, two-way pass-rush ability",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Jayden Smith",      pos:"Defensive Tackle", cls:"2027",ht:'6\'2"', wt:"262 lbs",num:"#54", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@ImJaydenSmith",phone:"(470) 715-3180",email:"imjaydenalsmith@gmail.com",hudl:"http://www.hudl.com/profile/19550982",offers:[],strengths:"Powerful interior presence, motor, run stuffing",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Zyaire Patrick",    pos:"Defensive Back",   cls:"2027",ht:'6\'1"', wt:"168 lbs",num:"#7",  school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@Zyaire_Patrick1",phone:"(470) 262-6839",email:"zyairepatrick17@gmail.com",hudl:"http://www.hudl.com/profile/22267257",offers:["Liberty","Georgia State","Troy"],photo:"zyaire.jpg",
+    stats:{tackles:"",int:"",passDefl:"",ff:"",tfl:"",td:""}},
+  {name:"Keaton Vanhorn",    pos:"Linebacker",       cls:"2027",ht:'5\'11"',wt:"205 lbs",num:"#48", school:"Stockbridge HS",side:"def",gpa:"3.7",twitter:"@ValidKeaton",phone:"(678) 935-8143",email:"keatonvanhorn48@gmail.com",hudl:"http://www.hudl.com/profile/20779037",offers:[],photo:"",
+    stats:{tackles:"",sacks:"",tfl:"",int:"",ff:"",passDefl:""}},
+  {name:"Joshua Scott",      pos:"Quarterback",      cls:"2027",ht:'6\'0"', wt:"190 lbs",num:"#5",  school:"Stockbridge HS",side:"off",gpa:"3.6",twitter:"@JoshScott_2027",phone:"(404) 547-2473",email:"phatscott26@gmail.com",hudl:"http://www.hudl.com/profile/19378043",offers:["Georgia State","FIU","NC State"],photo:"josh.jpg",
+    stats:{compPct:"",passYds:"",passTD:"",int:"",rushYds:"",rushTD:""}},
+  {name:"Andrew Wilson",     pos:"Linebacker",       cls:"2027",ht:'6\'0"', wt:"217 lbs",num:"#0",  school:"Stockbridge HS",side:"def",gpa:"3.6",twitter:"@TreDub_3",phone:"(678) 592-6937",email:"trewilson104@gmail.com",hudl:"http://www.hudl.com/profile/22510903",offers:["New Mexico State","New Hampshire","Arizona State"],photo:"",
+    stats:{tackles:"",sacks:"",tfl:"",int:"",ff:"",passDefl:""}},
+  {name:"Elijah Patterson",  pos:"Defensive Back",   cls:"2027",ht:'6\'0"', wt:"160 lbs",num:"#11", school:"Stockbridge HS",side:"def",gpa:"3.1",twitter:"@ElijahP_2027",phone:"(585) 317-4629",email:"Elijahpatterson881@gmail.com",hudl:"http://www.hudl.com/profile/21970000",offers:["Alabama State","Colorado State"],photo:"",
+    stats:{tackles:"",int:"",passDefl:"",ff:"",tfl:"",td:""}},
+  {name:"Chaz Huffman",      pos:"TE / DE",          cls:"2027",ht:'6\'2"', wt:"190 lbs",num:"ATH", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@ChazHuffman5",phone:"(470) 301-3227",email:"chazhuff8@gmail.com",hudl:"http://www.hudl.com/profile/19379065",offers:[],photo:"",
+    stats:{rec:"",recYds:"",sacks:"",tfl:"",gamesStarted:"",td:""}},
+  {name:"Jayden Smith",      pos:"Defensive Tackle", cls:"2027",ht:'6\'2"', wt:"262 lbs",num:"#54", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@ImJaydenSmith",phone:"(470) 715-3180",email:"imjaydenalsmith@gmail.com",hudl:"http://www.hudl.com/profile/19550982",offers:[],photo:"",
+    stats:{tackles:"",sacks:"",tfl:"",ff:"",qbHurries:"",gamesStarted:""}},
   // CLASS OF 2028
-  {name:"Gavin Kinchen",     pos:"Wide Receiver",    cls:"2028",ht:'5\'8"', wt:"163 lbs",num:"#6",  school:"Stockbridge HS",side:"off",gpa:"3.8",twitter:"@GEEBO_6",phone:"(678) 209-7237",email:"Kinchengavin6@gmail.com",hudl:"http://www.hudl.com/profile/22376416",offers:["Oregon State","FIU","Georgia State"],strengths:"Quickness, route running, yards after catch",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"g6.JPEG"},
-  {name:"Mason Freeman",     pos:"Wide Receiver",    cls:"2028",ht:'5\'11"',wt:"160 lbs",num:"#1",  school:"Stockbridge HS",side:"off",gpa:"3.0",twitter:"@D1_MasonFreeman",phone:"(678) 698-6064",email:"masonfreeman2010@gmail.com",hudl:"https://www.hudl.com/profile/22258342/Mason-Freeman",offers:["UAB","Georgia State","Georgia Tech","FIU","Oregon State","Western Kentucky","Kentucky","Southern Miss","Howard","South Carolina","Kennesaw State","Samford","Liberty","North Carolina","Jacksonville State"],strengths:"Speed, route running, sharp hands",combine:{forty:"4.45",vertical:"",broad:"",shuttle:"",bench:""},photo:"mason.jpg"},
-  {name:"Jeremiah Magee",    pos:"Offensive Line",   cls:"2028",ht:'6\'3"', wt:"320 lbs",num:"#78", school:"Stockbridge HS",side:"off",gpa:"2.7",twitter:"@JeremiahM2028",phone:"(404) 490-5323",email:"jeremiahmagee2028@gmail.com",hudl:"http://www.hudl.com/profile/22928980",offers:["Florida International","East Carolina"],strengths:"Elite size, footwork, high ceiling at tackle",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"magee.JPEG"},
-  {name:"Titus Mapp Jr",     pos:"Linebacker",       cls:"2028",ht:'5\'11"',wt:"203 lbs",num:"#29", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@TitusMappJr10",phone:"(678) 596-0159",email:"titusmapp20@gmail.com",hudl:"http://www.hudl.com/profile/23029756",offers:[],strengths:"Physicality, blitz package, pass coverage",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"titus.JPEG"},
-  {name:"Caleb Thomas",      pos:"TE / DE",          cls:"2028",ht:'6\'3"', wt:"230 lbs",num:"#31", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@31Plays_",phone:"(470) 249-2424",email:"janettathomas@gmail.com",hudl:"http://www.hudl.com/profile/7643632",offers:["FIU","Western Kentucky","Liberty"],strengths:"Motor, pass rush, elite length",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"caleb.JPEG"},
-  {name:"Chandler Green",    pos:"Offensive Line",   cls:"2028",ht:'6\'0"', wt:"272 lbs",num:"#65", school:"Stockbridge HS",side:"off",gpa:"2.0",twitter:"@ChandlerPGreen",phone:"(404) 668-4704",email:"chandlergreen542@gmail.com",hudl:"http://www.hudl.com/profile/23029740",offers:[],strengths:"Powerful base, drive blocking, interior anchor",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Malachi Everett",   pos:"Linebacker",       cls:"2028",ht:'5\'9"', wt:"208 lbs",num:"#52", school:"Stockbridge HS",side:"def",gpa:"4.2",twitter:"@MalachiEverett8",phone:"(901) 488-0441",email:"mjeverett400@gmail.com",hudl:"http://www.hudl.com/profile/22279680",offers:[],strengths:"Elite motor, 4.2 GPA scholar-athlete, physical tackler",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Jordin Edwards",    pos:"TE / DE",          cls:"2028",ht:'6\'1"', wt:"197 lbs",num:"ATH", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@JordinEdwards8",phone:"(470) 593-8322",email:"JordinEdwards8@gmail.com",hudl:"http://www.hudl.com/profile/25646499",offers:["Alabama State"],strengths:"Versatility, athleticism, motor off the edge",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Isaiah Davis",      pos:"Defensive Back",   cls:"2028",ht:'5\'9"', wt:"178 lbs",num:"#24", school:"Stockbridge HS",side:"def",gpa:"3.3",twitter:"@IsaiahDavis2028",phone:"(659) 305-9398",email:"zayyydavis3@gmail.com",hudl:"http://www.hudl.com/profile/18905702",offers:[],strengths:"Athleticism, physicality, press coverage",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Chris Harden",      pos:"Wide Receiver",    cls:"2028",ht:'6\'1"', wt:"175 lbs",num:"ATH", school:"Stockbridge HS",side:"off",gpa:"3.2",twitter:"@LuhChrisJr2028",phone:"(678) 886-3316",email:"Hardenc03@gmail.com",hudl:"http://www.hudl.com/profile/22390795",offers:[],strengths:"Size, contested catches, red zone threat",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Cody Hood",         pos:"DT / OL",          cls:"2028",ht:'6\'1"', wt:"265 lbs",num:"#57", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@TheCodyHood8",phone:"(470) 338-4856",email:"codyqhood8@gmail.com",hudl:"",offers:[],strengths:"Interior strength, versatile two-way lineman",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"cody.JPEG"},
+  {name:"Gavin Kinchen",     pos:"Wide Receiver",    cls:"2028",ht:'5\'8"', wt:"163 lbs",num:"#6",  school:"Stockbridge HS",side:"off",gpa:"3.8",twitter:"@GEEBO_6",phone:"(678) 209-7237",email:"Kinchengavin6@gmail.com",hudl:"http://www.hudl.com/profile/22376416",offers:["Oregon State","FIU","Georgia State"],photo:"g6.JPEG",
+    stats:{rec:"",recYds:"",recTD:"",ypr:"",long:"",drops:""}},
+  {name:"Mason Freeman",     pos:"Wide Receiver",    cls:"2028",ht:'5\'11"',wt:"160 lbs",num:"#1",  school:"Stockbridge HS",side:"off",gpa:"3.0",twitter:"@D1_MasonFreeman",phone:"(678) 698-6064",email:"masonfreeman2010@gmail.com",hudl:"https://www.hudl.com/profile/22258342/Mason-Freeman",offers:["UAB","Georgia State","Georgia Tech","FIU","Oregon State","Western Kentucky","Kentucky","Southern Miss","Howard","South Carolina","Kennesaw State","Samford","Liberty","North Carolina","Jacksonville State"],photo:"mason.jpg",
+    stats:{rec:"",recYds:"",recTD:"",ypr:"",long:"",drops:""}},
+  {name:"Jeremiah Magee",    pos:"Offensive Line",   cls:"2028",ht:'6\'3"', wt:"320 lbs",num:"#78", school:"Stockbridge HS",side:"off",gpa:"2.7",twitter:"@JeremiahM2028",phone:"(404) 490-5323",email:"jeremiahmagee2028@gmail.com",hudl:"http://www.hudl.com/profile/22928980",offers:["Florida International","East Carolina"],photo:"magee.JPEG",
+    stats:{pancakes:"",allowedSacks:"",gamesStarted:""}},
+  {name:"Titus Mapp Jr",     pos:"Linebacker",       cls:"2028",ht:'5\'11"',wt:"203 lbs",num:"#29", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@TitusMappJr10",phone:"(678) 596-0159",email:"titusmapp20@gmail.com",hudl:"http://www.hudl.com/profile/23029756",offers:[],photo:"titus.JPEG",
+    stats:{tackles:"",sacks:"",tfl:"",int:"",ff:"",passDefl:""}},
+  {name:"Caleb Thomas",      pos:"TE / DE",          cls:"2028",ht:'6\'3"', wt:"230 lbs",num:"#31", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@31Plays_",phone:"(470) 249-2424",email:"janettathomas@gmail.com",hudl:"http://www.hudl.com/profile/7643632",offers:["FIU","Western Kentucky","Liberty"],photo:"caleb.JPEG",
+    stats:{rec:"",recYds:"",sacks:"",tfl:"",gamesStarted:"",td:""}},
+  {name:"Chandler Green",    pos:"Offensive Line",   cls:"2028",ht:'6\'0"', wt:"272 lbs",num:"#65", school:"Stockbridge HS",side:"off",gpa:"2.0",twitter:"@ChandlerPGreen",phone:"(404) 668-4704",email:"chandlergreen542@gmail.com",hudl:"http://www.hudl.com/profile/23029740",offers:[],photo:"",
+    stats:{pancakes:"",allowedSacks:"",gamesStarted:""}},
+  {name:"Malachi Everett",   pos:"Linebacker",       cls:"2028",ht:'5\'9"', wt:"208 lbs",num:"#52", school:"Stockbridge HS",side:"def",gpa:"4.2",twitter:"@MalachiEverett8",phone:"(901) 488-0441",email:"mjeverett400@gmail.com",hudl:"http://www.hudl.com/profile/22279680",offers:[],photo:"",
+    stats:{tackles:"",sacks:"",tfl:"",int:"",ff:"",passDefl:""}},
+  {name:"Jordin Edwards",    pos:"TE / DE",          cls:"2028",ht:'6\'1"', wt:"197 lbs",num:"ATH", school:"Stockbridge HS",side:"def",gpa:"3.0",twitter:"@JordinEdwards8",phone:"(470) 593-8322",email:"JordinEdwards8@gmail.com",hudl:"http://www.hudl.com/profile/25646499",offers:["Alabama State"],photo:"",
+    stats:{rec:"",recYds:"",sacks:"",tfl:"",gamesStarted:"",td:""}},
+  {name:"Isaiah Davis",      pos:"Defensive Back",   cls:"2028",ht:'5\'9"', wt:"178 lbs",num:"#24", school:"Stockbridge HS",side:"def",gpa:"3.3",twitter:"@IsaiahDavis2028",phone:"(659) 305-9398",email:"zayyydavis3@gmail.com",hudl:"http://www.hudl.com/profile/18905702",offers:[],photo:"",
+    stats:{tackles:"",int:"",passDefl:"",ff:"",tfl:"",td:""}},
+  {name:"Chris Harden",      pos:"Wide Receiver",    cls:"2028",ht:'6\'1"', wt:"175 lbs",num:"ATH", school:"Stockbridge HS",side:"off",gpa:"3.2",twitter:"@LuhChrisJr2028",phone:"(678) 886-3316",email:"Hardenc03@gmail.com",hudl:"http://www.hudl.com/profile/22390795",offers:[],photo:"",
+    stats:{rec:"",recYds:"",recTD:"",ypr:"",long:"",drops:""}},
+  {name:"Cody Hood",         pos:"DT / OL",          cls:"2028",ht:'6\'1"', wt:"265 lbs",num:"#57", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@TheCodyHood8",phone:"(470) 338-4856",email:"codyqhood8@gmail.com",hudl:"",offers:[],photo:"cody.JPEG",
+    stats:{tackles:"",sacks:"",tfl:"",ff:"",qbHurries:"",gamesStarted:""}},
   // CLASS OF 2029
-  {name:"Dominic Tucker",    pos:"Running Back",     cls:"2029",ht:'5\'11"',wt:"185 lbs",num:"#13", school:"Stockbridge HS",side:"off",gpa:"3.6",twitter:"@DominicT_2029",phone:"(404) 450-2137",email:"Dxtucker@outlook.com",hudl:"http://www.hudl.com/profile/23640767",offers:["Samford","Georgia State","Florida International"],strengths:"Vision, burst, balance, big-play ability",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:"dom.JPEG"},
-  {name:"Jevon Medlock",     pos:"Defensive Back",   cls:"2029",ht:'5\'9"', wt:"170 lbs",num:"#25", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@D1Von1029",phone:"(404) 884-5947",email:"Jevonmedlock2029@gmail.com",hudl:"http://www.hudl.com/profile/26613048",offers:["Georgia State","Florida International","Akron"],strengths:"Instincts, physicality in run support, ball hawk",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Jacobi Footman",    pos:"Quarterback",      cls:"2029",ht:'5\'10"',wt:"170 lbs",num:"#15", school:"Stockbridge HS",side:"off",gpa:"3.4",twitter:"@J32k29",phone:"(470) 726-7006",email:"jacobifootman@gmail.com",hudl:"http://www.hudl.com/profile/24519527",offers:[],strengths:"Mobility, football IQ, upside",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"Khalil Jeffreys",   pos:"Defensive Back",   cls:"2029",ht:'6\'0"', wt:"185 lbs",num:"#20", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@Khalil_Jeffreys",phone:"(943) 206-7031",email:"khaliljeffreys11@icloud.com",hudl:"http://www.hudl.com/profile/25985044",offers:[],strengths:"Length, athleticism, coverage versatility",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
-  {name:"King Berthelot",    pos:"Defensive Back",   cls:"2029",ht:'6\'0"', wt:"195 lbs",num:"#10", school:"Stockbridge HS",side:"def",gpa:"3.6",twitter:"@21_KingBert",phone:"(678) 612-2992",email:"kbert999@icloud.com",hudl:"http://www.hudl.com/profile/26623837",offers:[],strengths:"Size, physicality, high-ceiling safety",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""},
+  {name:"Dominic Tucker",    pos:"Running Back",     cls:"2029",ht:'5\'11"',wt:"185 lbs",num:"#13", school:"Stockbridge HS",side:"off",gpa:"3.6",twitter:"@DominicT_2029",phone:"(404) 450-2137",email:"Dxtucker@outlook.com",hudl:"http://www.hudl.com/profile/23640767",offers:["Samford","Georgia State","Florida International"],photo:"dom.JPEG",
+    stats:{carries:"",rushYds:"",rushTD:"",ypc:"",long:"",rec:""}},
+  {name:"Jevon Medlock",     pos:"Defensive Back",   cls:"2029",ht:'5\'9"', wt:"170 lbs",num:"#25", school:"Stockbridge HS",side:"def",gpa:"3.5",twitter:"@D1Von1029",phone:"(404) 884-5947",email:"Jevonmedlock2029@gmail.com",hudl:"http://www.hudl.com/profile/26613048",offers:["Georgia State","Florida International","Akron"],photo:"",
+    stats:{tackles:"",int:"",passDefl:"",ff:"",tfl:"",td:""}},
+  {name:"Jacobi Footman",    pos:"Quarterback",      cls:"2029",ht:'5\'10"',wt:"170 lbs",num:"#15", school:"Stockbridge HS",side:"off",gpa:"3.4",twitter:"@J32k29",phone:"(470) 726-7006",email:"jacobifootman@gmail.com",hudl:"http://www.hudl.com/profile/24519527",offers:[],photo:"",
+    stats:{compPct:"",passYds:"",passTD:"",int:"",rushYds:"",rushTD:""}},
+  {name:"Khalil Jeffreys",   pos:"Defensive Back",   cls:"2029",ht:'6\'0"', wt:"185 lbs",num:"#20", school:"Stockbridge HS",side:"def",gpa:"3.4",twitter:"@Khalil_Jeffreys",phone:"(943) 206-7031",email:"khaliljeffreys11@icloud.com",hudl:"http://www.hudl.com/profile/25985044",offers:[],photo:"",
+    stats:{tackles:"",int:"",passDefl:"",ff:"",tfl:"",td:""}},
+  {name:"King Berthelot",    pos:"Defensive Back",   cls:"2029",ht:'6\'0"', wt:"195 lbs",num:"#10", school:"Stockbridge HS",side:"def",gpa:"3.6",twitter:"@21_KingBert",phone:"(678) 612-2992",email:"kbert999@icloud.com",hudl:"http://www.hudl.com/profile/26623837",offers:[],photo:"",
+    stats:{tackles:"",int:"",passDefl:"",ff:"",tfl:"",td:""}},
   // CLASS OF 2030
-  {name:"Kentavious Terrell", pos:"Wide Receiver",   cls:"2030",ht:'6\'1"', wt:"166 lbs",num:"#11", school:"Stockbridge HS",side:"off",gpa:"3.0",twitter:"@KentaviousT2",phone:"(470) 430-8396",email:"Kjterrell8@icloud.com",hudl:"",offers:["Georgia State","Florida International"],strengths:"Length, separation, big-play ability",combine:{forty:"",vertical:"",broad:"",shuttle:"",bench:""},photo:""}
+  {name:"Kentavious Terrell", pos:"Wide Receiver",   cls:"2030",ht:'6\'1"', wt:"166 lbs",num:"#11", school:"Stockbridge HS",side:"off",gpa:"3.0",twitter:"@KentaviousT2",phone:"(470) 430-8396",email:"Kjterrell8@icloud.com",hudl:"",offers:["Georgia State","Florida International"],photo:"",
+    stats:{rec:"",recYds:"",recTD:"",ypr:"",long:"",drops:""}}
 ];
 
 var currentFilter='all';
@@ -484,6 +528,42 @@ function buildRoster(){
     card.addEventListener('click',function(){openProfile(parseInt(this.dataset.idx));});
     grid.appendChild(card);
   });
+}
+
+function buildStatsBlock(p){
+  var grp = posGroup(p.pos);
+  var template = STAT_TEMPLATES[grp] || STAT_TEMPLATES['ATH'];
+  var stats = p.stats || {};
+
+  // Check if any stat has data
+  var hasData = template.some(function(t){ return stats[t.key] && stats[t.key] !== ''; });
+
+  var container = document.getElementById('pStatsGrid');
+  container.innerHTML = '';
+
+  if(!hasData){
+    container.innerHTML = '<div class="stats-empty">Season stats will be updated when available.</div>';
+    return;
+  }
+
+  var grid = document.createElement('div');
+  grid.className = 'stats-grid';
+
+  template.forEach(function(t){
+    var val = stats[t.key];
+    if(!val && val !== 0) return; // skip empty
+    var box = document.createElement('div');
+    box.className = 'stat-box';
+    var valClass = String(val).length > 4 ? 'stat-box-val med' : 'stat-box-val';
+    box.innerHTML = '<div class="stat-box-label">'+t.label+'</div><div class="'+valClass+'">'+val+'</div>';
+    grid.appendChild(box);
+  });
+
+  if(grid.children.length === 0){
+    container.innerHTML = '<div class="stats-empty">Season stats will be updated when available.</div>';
+  } else {
+    container.appendChild(grid);
+  }
 }
 
 function searchPlayers(query){
@@ -520,12 +600,7 @@ function openProfile(idx){
   var hb=document.getElementById('pHudlBtn');
   if(p.hudl){hb.onclick=function(){window.open(p.hudl,'_blank');};hb.style.opacity='1';hb.style.pointerEvents='auto';}
   else{hb.onclick=null;hb.style.opacity='0.45';hb.style.pointerEvents='none';}
-  var cg=document.getElementById('pCombineGrid');cg.innerHTML='';
-  var cf=[{key:'forty',label:'40-Yard Dash',unit:'s'},{key:'vertical',label:'Vertical',unit:'in'},{key:'broad',label:'Broad Jump',unit:'ft'},{key:'shuttle',label:'5-10-5 Shuttle',unit:'s'},{key:'bench',label:'Bench Press',unit:'reps'}];
-  var ha=cf.some(function(f){return p.combine&&p.combine[f.key];});
-  if(!ha){cg.style.background='none';cg.innerHTML='<div class="combine-empty">Testing data not yet recorded.</div>';}
-  else{cg.style.background='var(--bd)';cf.forEach(function(f){var v=(p.combine&&p.combine[f.key])?p.combine[f.key]:'—';var c=document.createElement('div');c.className='combine-cell';c.innerHTML='<div class="combine-label">'+f.label+'</div><div class="combine-val">'+v+(v!=='—'?'<span style="font-size:12px;color:var(--mu);font-family:\'DM Mono\',monospace;margin-left:3px;">'+f.unit+'</span>':'')+'</div>';cg.appendChild(c);});}
-  document.getElementById('pStrengths').textContent=p.strengths;
+  buildStatsBlock(p);
   var wrap=document.getElementById('pOffers');wrap.innerHTML='';
   var sec=document.getElementById('pOffersSection');
   if(p.offers.length){sec.style.display='block';p.offers.forEach(function(o){var pill=document.createElement('span');pill.className='offer-pill';pill.textContent=o;wrap.appendChild(pill);});}
